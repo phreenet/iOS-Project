@@ -1,0 +1,485 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		40D567C119BBB5BC00888D63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D567C019BBB5BC00888D63 /* Foundation.framework */; };
+		40D567C319BBB5BC00888D63 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D567C219BBB5BC00888D63 /* CoreGraphics.framework */; };
+		40D567C519BBB5BC00888D63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D567C419BBB5BC00888D63 /* UIKit.framework */; };
+		40D567C719BBB5BC00888D63 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D567C619BBB5BC00888D63 /* CoreData.framework */; };
+		40D567CD19BBB5BC00888D63 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 40D567CB19BBB5BC00888D63 /* InfoPlist.strings */; };
+		40D567CF19BBB5BC00888D63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D567CE19BBB5BC00888D63 /* main.m */; };
+		40D567D319BBB5BC00888D63 /* FPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D567D219BBB5BC00888D63 /* FPAppDelegate.m */; };
+		40D567D619BBB5BC00888D63 /* WikiHere.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40D567D419BBB5BC00888D63 /* WikiHere.xcdatamodeld */; };
+		40D567D819BBB5BC00888D63 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40D567D719BBB5BC00888D63 /* Images.xcassets */; };
+		40D567DF19BBB5BC00888D63 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D567DE19BBB5BC00888D63 /* XCTest.framework */; };
+		40D567E019BBB5BC00888D63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D567C019BBB5BC00888D63 /* Foundation.framework */; };
+		40D567E119BBB5BC00888D63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D567C419BBB5BC00888D63 /* UIKit.framework */; };
+		40D567E219BBB5BC00888D63 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D567C619BBB5BC00888D63 /* CoreData.framework */; };
+		40D567EA19BBB5BC00888D63 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 40D567E819BBB5BC00888D63 /* InfoPlist.strings */; };
+		40D567EC19BBB5BC00888D63 /* WikiHereTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D567EB19BBB5BC00888D63 /* WikiHereTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		40D567E319BBB5BC00888D63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 40D567B519BBB5BC00888D63 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 40D567BC19BBB5BC00888D63;
+			remoteInfo = WikiHere;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		40D567BD19BBB5BC00888D63 /* WikiHere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WikiHere.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		40D567C019BBB5BC00888D63 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		40D567C219BBB5BC00888D63 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		40D567C419BBB5BC00888D63 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		40D567C619BBB5BC00888D63 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		40D567CA19BBB5BC00888D63 /* WikiHere-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WikiHere-Info.plist"; sourceTree = "<group>"; };
+		40D567CC19BBB5BC00888D63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		40D567CE19BBB5BC00888D63 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		40D567D019BBB5BC00888D63 /* WikiHere-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WikiHere-Prefix.pch"; sourceTree = "<group>"; };
+		40D567D119BBB5BC00888D63 /* FPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FPAppDelegate.h; sourceTree = "<group>"; };
+		40D567D219BBB5BC00888D63 /* FPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FPAppDelegate.m; sourceTree = "<group>"; };
+		40D567D519BBB5BC00888D63 /* WikiHere.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WikiHere.xcdatamodel; sourceTree = "<group>"; };
+		40D567D719BBB5BC00888D63 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		40D567DD19BBB5BC00888D63 /* WikiHereTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WikiHereTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		40D567DE19BBB5BC00888D63 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		40D567E719BBB5BC00888D63 /* WikiHereTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WikiHereTests-Info.plist"; sourceTree = "<group>"; };
+		40D567E919BBB5BC00888D63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		40D567EB19BBB5BC00888D63 /* WikiHereTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WikiHereTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		40D567BA19BBB5BC00888D63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40D567C319BBB5BC00888D63 /* CoreGraphics.framework in Frameworks */,
+				40D567C719BBB5BC00888D63 /* CoreData.framework in Frameworks */,
+				40D567C519BBB5BC00888D63 /* UIKit.framework in Frameworks */,
+				40D567C119BBB5BC00888D63 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40D567DA19BBB5BC00888D63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40D567DF19BBB5BC00888D63 /* XCTest.framework in Frameworks */,
+				40D567E219BBB5BC00888D63 /* CoreData.framework in Frameworks */,
+				40D567E119BBB5BC00888D63 /* UIKit.framework in Frameworks */,
+				40D567E019BBB5BC00888D63 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		40D567B419BBB5BC00888D63 = {
+			isa = PBXGroup;
+			children = (
+				40D567C819BBB5BC00888D63 /* WikiHere */,
+				40D567E519BBB5BC00888D63 /* WikiHereTests */,
+				40D567BF19BBB5BC00888D63 /* Frameworks */,
+				40D567BE19BBB5BC00888D63 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		40D567BE19BBB5BC00888D63 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				40D567BD19BBB5BC00888D63 /* WikiHere.app */,
+				40D567DD19BBB5BC00888D63 /* WikiHereTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		40D567BF19BBB5BC00888D63 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				40D567C019BBB5BC00888D63 /* Foundation.framework */,
+				40D567C219BBB5BC00888D63 /* CoreGraphics.framework */,
+				40D567C419BBB5BC00888D63 /* UIKit.framework */,
+				40D567C619BBB5BC00888D63 /* CoreData.framework */,
+				40D567DE19BBB5BC00888D63 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		40D567C819BBB5BC00888D63 /* WikiHere */ = {
+			isa = PBXGroup;
+			children = (
+				40D567D119BBB5BC00888D63 /* FPAppDelegate.h */,
+				40D567D219BBB5BC00888D63 /* FPAppDelegate.m */,
+				40D567D719BBB5BC00888D63 /* Images.xcassets */,
+				40D567D419BBB5BC00888D63 /* WikiHere.xcdatamodeld */,
+				40D567C919BBB5BC00888D63 /* Supporting Files */,
+			);
+			path = WikiHere;
+			sourceTree = "<group>";
+		};
+		40D567C919BBB5BC00888D63 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				40D567CA19BBB5BC00888D63 /* WikiHere-Info.plist */,
+				40D567CB19BBB5BC00888D63 /* InfoPlist.strings */,
+				40D567CE19BBB5BC00888D63 /* main.m */,
+				40D567D019BBB5BC00888D63 /* WikiHere-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		40D567E519BBB5BC00888D63 /* WikiHereTests */ = {
+			isa = PBXGroup;
+			children = (
+				40D567EB19BBB5BC00888D63 /* WikiHereTests.m */,
+				40D567E619BBB5BC00888D63 /* Supporting Files */,
+			);
+			path = WikiHereTests;
+			sourceTree = "<group>";
+		};
+		40D567E619BBB5BC00888D63 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				40D567E719BBB5BC00888D63 /* WikiHereTests-Info.plist */,
+				40D567E819BBB5BC00888D63 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		40D567BC19BBB5BC00888D63 /* WikiHere */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40D567EF19BBB5BC00888D63 /* Build configuration list for PBXNativeTarget "WikiHere" */;
+			buildPhases = (
+				40D567B919BBB5BC00888D63 /* Sources */,
+				40D567BA19BBB5BC00888D63 /* Frameworks */,
+				40D567BB19BBB5BC00888D63 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WikiHere;
+			productName = WikiHere;
+			productReference = 40D567BD19BBB5BC00888D63 /* WikiHere.app */;
+			productType = "com.apple.product-type.application";
+		};
+		40D567DC19BBB5BC00888D63 /* WikiHereTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40D567F219BBB5BC00888D63 /* Build configuration list for PBXNativeTarget "WikiHereTests" */;
+			buildPhases = (
+				40D567D919BBB5BC00888D63 /* Sources */,
+				40D567DA19BBB5BC00888D63 /* Frameworks */,
+				40D567DB19BBB5BC00888D63 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				40D567E419BBB5BC00888D63 /* PBXTargetDependency */,
+			);
+			name = WikiHereTests;
+			productName = WikiHereTests;
+			productReference = 40D567DD19BBB5BC00888D63 /* WikiHereTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		40D567B519BBB5BC00888D63 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = FP;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "CMSC 495";
+				TargetAttributes = {
+					40D567BC19BBB5BC00888D63 = {
+						DevelopmentTeam = T5K6F3KEE8;
+					};
+					40D567DC19BBB5BC00888D63 = {
+						TestTargetID = 40D567BC19BBB5BC00888D63;
+					};
+				};
+			};
+			buildConfigurationList = 40D567B819BBB5BC00888D63 /* Build configuration list for PBXProject "WikiHere" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 40D567B419BBB5BC00888D63;
+			productRefGroup = 40D567BE19BBB5BC00888D63 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				40D567BC19BBB5BC00888D63 /* WikiHere */,
+				40D567DC19BBB5BC00888D63 /* WikiHereTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		40D567BB19BBB5BC00888D63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40D567CD19BBB5BC00888D63 /* InfoPlist.strings in Resources */,
+				40D567D819BBB5BC00888D63 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40D567DB19BBB5BC00888D63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40D567EA19BBB5BC00888D63 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		40D567B919BBB5BC00888D63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40D567D319BBB5BC00888D63 /* FPAppDelegate.m in Sources */,
+				40D567CF19BBB5BC00888D63 /* main.m in Sources */,
+				40D567D619BBB5BC00888D63 /* WikiHere.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40D567D919BBB5BC00888D63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40D567EC19BBB5BC00888D63 /* WikiHereTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		40D567E419BBB5BC00888D63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 40D567BC19BBB5BC00888D63 /* WikiHere */;
+			targetProxy = 40D567E319BBB5BC00888D63 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		40D567CB19BBB5BC00888D63 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				40D567CC19BBB5BC00888D63 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		40D567E819BBB5BC00888D63 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				40D567E919BBB5BC00888D63 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		40D567ED19BBB5BC00888D63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		40D567EE19BBB5BC00888D63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		40D567F019BBB5BC00888D63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WikiHere/WikiHere-Prefix.pch";
+				INFOPLIST_FILE = "WikiHere/WikiHere-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		40D567F119BBB5BC00888D63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WikiHere/WikiHere-Prefix.pch";
+				INFOPLIST_FILE = "WikiHere/WikiHere-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		40D567F319BBB5BC00888D63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WikiHere.app/WikiHere";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WikiHere/WikiHere-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "WikiHereTests/WikiHereTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		40D567F419BBB5BC00888D63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WikiHere.app/WikiHere";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WikiHere/WikiHere-Prefix.pch";
+				INFOPLIST_FILE = "WikiHereTests/WikiHereTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		40D567B819BBB5BC00888D63 /* Build configuration list for PBXProject "WikiHere" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40D567ED19BBB5BC00888D63 /* Debug */,
+				40D567EE19BBB5BC00888D63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		40D567EF19BBB5BC00888D63 /* Build configuration list for PBXNativeTarget "WikiHere" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40D567F019BBB5BC00888D63 /* Debug */,
+				40D567F119BBB5BC00888D63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		40D567F219BBB5BC00888D63 /* Build configuration list for PBXNativeTarget "WikiHereTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40D567F319BBB5BC00888D63 /* Debug */,
+				40D567F419BBB5BC00888D63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		40D567D419BBB5BC00888D63 /* WikiHere.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				40D567D519BBB5BC00888D63 /* WikiHere.xcdatamodel */,
+			);
+			currentVersion = 40D567D519BBB5BC00888D63 /* WikiHere.xcdatamodel */;
+			path = WikiHere.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 40D567B519BBB5BC00888D63 /* Project object */;
+}
