@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40CFE6ED19BBC7750086F5E5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CFE6EC19BBC7750086F5E5 /* MapKit.framework */; };
 		40D567C119BBB5BC00888D63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D567C019BBB5BC00888D63 /* Foundation.framework */; };
 		40D567C319BBB5BC00888D63 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D567C219BBB5BC00888D63 /* CoreGraphics.framework */; };
 		40D567C519BBB5BC00888D63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D567C419BBB5BC00888D63 /* UIKit.framework */; };
-		40D567C719BBB5BC00888D63 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D567C619BBB5BC00888D63 /* CoreData.framework */; };
+		40D567C719BBB5BC00888D63 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D567C619BBB5BC00888D63 /* CoreData.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		40D567CD19BBB5BC00888D63 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 40D567CB19BBB5BC00888D63 /* InfoPlist.strings */; };
 		40D567CF19BBB5BC00888D63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D567CE19BBB5BC00888D63 /* main.m */; };
 		40D567D319BBB5BC00888D63 /* FPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D567D219BBB5BC00888D63 /* FPAppDelegate.m */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		40CFE6EC19BBC7750086F5E5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		40D567BD19BBB5BC00888D63 /* WikiHere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WikiHere.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40D567C019BBB5BC00888D63 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		40D567C219BBB5BC00888D63 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,6 +64,7 @@
 			files = (
 				40D567C319BBB5BC00888D63 /* CoreGraphics.framework in Frameworks */,
 				40D567C719BBB5BC00888D63 /* CoreData.framework in Frameworks */,
+				40CFE6ED19BBC7750086F5E5 /* MapKit.framework in Frameworks */,
 				40D567C519BBB5BC00888D63 /* UIKit.framework in Frameworks */,
 				40D567C119BBB5BC00888D63 /* Foundation.framework in Frameworks */,
 			);
@@ -103,6 +106,7 @@
 		40D567BF19BBB5BC00888D63 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				40CFE6EC19BBC7750086F5E5 /* MapKit.framework */,
 				40D567C019BBB5BC00888D63 /* Foundation.framework */,
 				40D567C219BBB5BC00888D63 /* CoreGraphics.framework */,
 				40D567C419BBB5BC00888D63 /* UIKit.framework */,
@@ -203,6 +207,11 @@
 				TargetAttributes = {
 					40D567BC19BBB5BC00888D63 = {
 						DevelopmentTeam = T5K6F3KEE8;
+						SystemCapabilities = {
+							com.apple.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					40D567DC19BBB5BC00888D63 = {
 						TestTargetID = 40D567BC19BBB5BC00888D63;
@@ -457,6 +466,7 @@
 				40D567F119BBB5BC00888D63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		40D567F219BBB5BC00888D63 /* Build configuration list for PBXNativeTarget "WikiHereTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +475,7 @@
 				40D567F419BBB5BC00888D63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
