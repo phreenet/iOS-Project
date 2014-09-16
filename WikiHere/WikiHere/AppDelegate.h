@@ -1,5 +1,5 @@
 //
-//  FPAppDelegate.h
+//  AppDelegate.h
 //  WikiHere
 //
 //  Created by Justin Smith on 9/6/14.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FPAppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
