@@ -1,5 +1,5 @@
 //
-//  FPAppDelegate.m
+//  AppDelegate.m
 //  WikiHere
 //
 //  Created by Justin Smith on 9/6/14.

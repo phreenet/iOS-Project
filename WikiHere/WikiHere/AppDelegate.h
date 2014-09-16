@@ -1,5 +1,5 @@
 //
-//  FPAppDelegate.h
+//  AppDelegate.h
 //  WikiHere
 //
 //  Created by Justin Smith on 9/6/14.

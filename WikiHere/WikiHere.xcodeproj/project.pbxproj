@@ -14,7 +14,7 @@
 		40D567C719BBB5BC00888D63 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D567C619BBB5BC00888D63 /* CoreData.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		40D567CD19BBB5BC00888D63 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 40D567CB19BBB5BC00888D63 /* InfoPlist.strings */; };
 		40D567CF19BBB5BC00888D63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D567CE19BBB5BC00888D63 /* main.m */; };
-		40D567D319BBB5BC00888D63 /* FPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D567D219BBB5BC00888D63 /* FPAppDelegate.m */; };
+		40D567D319BBB5BC00888D63 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D567D219BBB5BC00888D63 /* AppDelegate.m */; };
 		40D567D619BBB5BC00888D63 /* WikiHere.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40D567D419BBB5BC00888D63 /* WikiHere.xcdatamodeld */; };
 		40D567D819BBB5BC00888D63 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40D567D719BBB5BC00888D63 /* Images.xcassets */; };
 		40D567DF19BBB5BC00888D63 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D567DE19BBB5BC00888D63 /* XCTest.framework */; };
@@ -46,8 +46,8 @@
 		40D567CC19BBB5BC00888D63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		40D567CE19BBB5BC00888D63 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		40D567D019BBB5BC00888D63 /* WikiHere-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WikiHere-Prefix.pch"; sourceTree = "<group>"; };
-		40D567D119BBB5BC00888D63 /* FPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FPAppDelegate.h; sourceTree = "<group>"; };
-		40D567D219BBB5BC00888D63 /* FPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FPAppDelegate.m; sourceTree = "<group>"; };
+		40D567D119BBB5BC00888D63 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		40D567D219BBB5BC00888D63 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		40D567D519BBB5BC00888D63 /* WikiHere.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WikiHere.xcdatamodel; sourceTree = "<group>"; };
 		40D567D719BBB5BC00888D63 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		40D567DD19BBB5BC00888D63 /* WikiHereTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WikiHereTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,8 +119,8 @@
 		40D567C819BBB5BC00888D63 /* WikiHere */ = {
 			isa = PBXGroup;
 			children = (
-				40D567D119BBB5BC00888D63 /* FPAppDelegate.h */,
-				40D567D219BBB5BC00888D63 /* FPAppDelegate.m */,
+				40D567D119BBB5BC00888D63 /* AppDelegate.h */,
+				40D567D219BBB5BC00888D63 /* AppDelegate.m */,
 				40D567D719BBB5BC00888D63 /* Images.xcassets */,
 				40D567D419BBB5BC00888D63 /* WikiHere.xcdatamodeld */,
 				40D567C919BBB5BC00888D63 /* Supporting Files */,
@@ -261,7 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40D567D319BBB5BC00888D63 /* FPAppDelegate.m in Sources */,
+				40D567D319BBB5BC00888D63 /* AppDelegate.m in Sources */,
 				40D567CF19BBB5BC00888D63 /* main.m in Sources */,
 				40D567D619BBB5BC00888D63 /* WikiHere.xcdatamodeld in Sources */,
 			);
