@@ -10,6 +10,7 @@
 		40CFE6ED19BBC7750086F5E5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CFE6EC19BBC7750086F5E5 /* MapKit.framework */; };
 		40D1CFEE19C7BDA900460134 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40D1CFED19C7BDA900460134 /* Storyboard.storyboard */; };
 		40D1CFF119C7C2CC00460134 /* TableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D1CFF019C7C2CC00460134 /* TableTableViewController.m */; };
+		40D1CFF719C7C5E300460134 /* TheViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D1CFF619C7C5E300460134 /* TheViewController.m */; };
 		40D567C119BBB5BC00888D63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D567C019BBB5BC00888D63 /* Foundation.framework */; };
 		40D567C319BBB5BC00888D63 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D567C219BBB5BC00888D63 /* CoreGraphics.framework */; };
 		40D567C519BBB5BC00888D63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D567C419BBB5BC00888D63 /* UIKit.framework */; };
@@ -42,6 +43,8 @@
 		40D1CFED19C7BDA900460134 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		40D1CFEF19C7C2CC00460134 /* TableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableTableViewController.h; sourceTree = "<group>"; };
 		40D1CFF019C7C2CC00460134 /* TableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableTableViewController.m; sourceTree = "<group>"; };
+		40D1CFF519C7C5E300460134 /* TheViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TheViewController.h; path = ../TheViewController.h; sourceTree = "<group>"; };
+		40D1CFF619C7C5E300460134 /* TheViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TheViewController.m; path = ../TheViewController.m; sourceTree = "<group>"; };
 		40D567BD19BBB5BC00888D63 /* WikiHere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WikiHere.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40D567C019BBB5BC00888D63 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		40D567C219BBB5BC00888D63 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -124,6 +127,8 @@
 		40D567C819BBB5BC00888D63 /* WikiHere */ = {
 			isa = PBXGroup;
 			children = (
+				40D1CFF519C7C5E300460134 /* TheViewController.h */,
+				40D1CFF619C7C5E300460134 /* TheViewController.m */,
 				40D567D119BBB5BC00888D63 /* FPAppDelegate.h */,
 				40D1CFED19C7BDA900460134 /* Storyboard.storyboard */,
 				40D1CFEF19C7C2CC00460134 /* TableTableViewController.h */,
@@ -270,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40D1CFF719C7C5E300460134 /* TheViewController.m in Sources */,
 				40D1CFF119C7C2CC00460134 /* TableTableViewController.m in Sources */,
 				40D567D319BBB5BC00888D63 /* FPAppDelegate.m in Sources */,
 				40D567CF19BBB5BC00888D63 /* main.m in Sources */,
