@@ -42,7 +42,7 @@
 		<string>MKDirectionsModePedestrian</string>
 	</array>
 	<key>UIMainStoryboardFile</key>
-	<string>iPhone</string>
+	<string>Main_iPhone</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
