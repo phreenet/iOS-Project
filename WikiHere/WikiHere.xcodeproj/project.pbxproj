@@ -23,6 +23,7 @@
 		40D567E219BBB5BC00888D63 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D567C619BBB5BC00888D63 /* CoreData.framework */; };
 		40D567EA19BBB5BC00888D63 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 40D567E819BBB5BC00888D63 /* InfoPlist.strings */; };
 		40D567EC19BBB5BC00888D63 /* WikiHereTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D567EB19BBB5BC00888D63 /* WikiHereTests.m */; };
+		40ED07D919C8F7D7001B83B6 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40ED07D819C8F7D7001B83B6 /* Main_iPhone.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		40D567E719BBB5BC00888D63 /* WikiHereTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WikiHereTests-Info.plist"; sourceTree = "<group>"; };
 		40D567E919BBB5BC00888D63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		40D567EB19BBB5BC00888D63 /* WikiHereTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WikiHereTests.m; sourceTree = "<group>"; };
+		40ED07D819C8F7D7001B83B6 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 		40D567C819BBB5BC00888D63 /* WikiHere */ = {
 			isa = PBXGroup;
 			children = (
+				40ED07D819C8F7D7001B83B6 /* Main_iPhone.storyboard */,
 				40D567D119BBB5BC00888D63 /* AppDelegate.h */,
 				40D567D219BBB5BC00888D63 /* AppDelegate.m */,
 				40D567D719BBB5BC00888D63 /* Images.xcassets */,
@@ -243,6 +246,7 @@
 			files = (
 				40D567CD19BBB5BC00888D63 /* InfoPlist.strings in Resources */,
 				40D567D819BBB5BC00888D63 /* Images.xcassets in Resources */,
+				40ED07D919C8F7D7001B83B6 /* Main_iPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
