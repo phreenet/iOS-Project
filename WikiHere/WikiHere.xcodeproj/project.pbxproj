@@ -201,7 +201,7 @@
 		40D567B519BBB5BC00888D63 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = FP;
+				CLASSPREFIX = "";
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "CMSC 495";
 				TargetAttributes = {
