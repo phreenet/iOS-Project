@@ -6,6 +6,12 @@
 // project.
 
 
+// JPSThumbnailAnnotation
+#define COCOAPODS_POD_AVAILABLE_JPSThumbnailAnnotation
+#define COCOAPODS_VERSION_MAJOR_JPSThumbnailAnnotation 1
+#define COCOAPODS_VERSION_MINOR_JPSThumbnailAnnotation 0
+#define COCOAPODS_VERSION_PATCH_JPSThumbnailAnnotation 0
+
 // WYPopoverController
 #define COCOAPODS_POD_AVAILABLE_WYPopoverController
 #define COCOAPODS_VERSION_MAJOR_WYPopoverController 0

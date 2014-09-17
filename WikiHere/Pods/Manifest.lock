@@ -1,10 +1,13 @@
 PODS:
+  - JPSThumbnailAnnotation (1.0.0)
   - WYPopoverController (0.2.2)
 
 DEPENDENCIES:
+  - JPSThumbnailAnnotation
   - WYPopoverController (~> 0.2.2)
 
 SPEC CHECKSUMS:
+  JPSThumbnailAnnotation: 3146c1cc9bdfb5e12888cf6c85d8d35940e66c0d
   WYPopoverController: c233d69fdfd5c7e316b481df1060624d7a9e629d
 
 COCOAPODS: 0.33.1
