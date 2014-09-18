@@ -1,5 +1,5 @@
 # iOS Project
-## WikieHere!
+## WikiHere!
 ### UMUC - CMSC 495
 #### Jeremy Kliphouse
 #### Jakki Macfadyen
