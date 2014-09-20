@@ -11,6 +11,8 @@
 
 @interface MapViewController : UIViewController <MKMapViewDelegate>
 
+// TODO: Make MapViewController a delegate of the article list model.
+
 @property (nonatomic) CLLocationCoordinate2D *lastLocation;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 

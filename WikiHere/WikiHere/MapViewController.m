@@ -12,6 +12,12 @@
 
 @synthesize lastLocation;
 
+// TODO: Implement map drag update, update articles if moved more than X meters.
+
+// TODO: Fix didUpdateUserLocation so that zoom region doesn't change zoom level if user has changed it manually.  Only zoom to default if user presses location button or on app startup.
+
+// TODO: Implement WYPopoverController for settings button.
+
 - (void)viewDidLoad
 {
   [super viewDidLoad];
