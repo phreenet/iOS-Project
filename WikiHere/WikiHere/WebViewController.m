@@ -34,7 +34,7 @@
     // Create a URL request
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     // Tell the web view to show it
-    [webview loadRequest:requestObj];
+    [_webView loadRequest:requestObj];
 }
 
 - (void)didReceiveMemoryWarning
