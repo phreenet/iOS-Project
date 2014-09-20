@@ -130,7 +130,7 @@
         <!--Table View Controller - Article List-->
         <scene sceneID="2Wi-fM-jff">
             <objects>
-                <tableViewController id="J0n-rW-cdh" sceneMemberID="viewController">
+                <tableViewController id="J0n-rW-cdh" customClass="TableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="WUv-pP-SCP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -176,10 +176,10 @@
             </objects>
             <point key="canvasLocation" x="431" y="855"/>
         </scene>
-        <!--View Controller - Wikipedia-->
+        <!--Web View Controller - Wikipedia-->
         <scene sceneID="7uu-lF-aqu">
             <objects>
-                <viewController id="3Ca-fV-cm0" sceneMemberID="viewController">
+                <viewController id="3Ca-fV-cm0" customClass="WebViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WLG-yp-PZH"/>
                         <viewControllerLayoutGuide type="bottom" id="mnd-I7-VEr"/>
