@@ -8,10 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WebViewController : UIViewController {
-    
-    IBOutlet UIWebView *webview;
-}
+@interface WebViewController : UIViewController
+
+@property (strong, nonatomic) UIWebView *webView;
 
 @property (strong, nonatomic) NSString *pageID;
 @end
