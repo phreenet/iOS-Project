@@ -143,6 +143,10 @@
 			isa = PBXGroup;
 			children = (
 				40ED07D819C8F7D7001B83B6 /* Main_iPhone.storyboard */,
+				4044DDBE19CE02170087B0A3 /* TableViewController.h */,
+				4044DDBF19CE02170087B0A3 /* TableViewController.m */,
+				4044DDC019CE02170087B0A3 /* WebViewController.h */,
+				4044DDC119CE02170087B0A3 /* WebViewController.m */,
 				40DAC0A419CCFBF100F35465 /* MapViewController.h */,
 				40DAC0A519CCFBF100F35465 /* MapViewController.m */,
 				40D567D119BBB5BC00888D63 /* AppDelegate.h */,
@@ -335,6 +339,7 @@
 				2266FB3619CDF8EA008BA9BA /* CallWikipedia.m in Sources */,
 				40D567CF19BBB5BC00888D63 /* main.m in Sources */,
 				40D567D619BBB5BC00888D63 /* WikiHere.xcdatamodeld in Sources */,
+				4044DDC219CE02170087B0A3 /* TableViewController.m in Sources */,
 				40DAC0A619CCFBF100F35465 /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
