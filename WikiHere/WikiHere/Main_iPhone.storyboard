@@ -198,6 +198,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Wikipedia" id="RQI-xg-375"/>
+                    <connections>
+                        <outlet property="webView" destination="OY1-Z0-dOX" id="kGF-Ep-vTx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6bd-1M-AcB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
