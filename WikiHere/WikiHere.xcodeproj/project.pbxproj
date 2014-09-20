@@ -24,6 +24,8 @@
 		40D567EA19BBB5BC00888D63 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 40D567E819BBB5BC00888D63 /* InfoPlist.strings */; };
 		40D567EC19BBB5BC00888D63 /* WikiHereTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D567EB19BBB5BC00888D63 /* WikiHereTests.m */; };
 		40ED07D919C8F7D7001B83B6 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40ED07D819C8F7D7001B83B6 /* Main_iPhone.storyboard */; };
+		677FABEF19CD02C1009E8871 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 677FABEE19CD02C1009E8871 /* WebViewController.m */; };
+		677FABF219CD05BA009E8871 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 677FABF119CD05BA009E8871 /* TableViewController.m */; };
 		7FF8A61F4FC548C780337934 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49C1DDEA1AFB43F5B9A2E3F8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +62,10 @@
 		40D567EB19BBB5BC00888D63 /* WikiHereTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WikiHereTests.m; sourceTree = "<group>"; };
 		40ED07D819C8F7D7001B83B6 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
 		49C1DDEA1AFB43F5B9A2E3F8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		677FABED19CD02C1009E8871 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		677FABEE19CD02C1009E8871 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		677FABF019CD05BA009E8871 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		677FABF119CD05BA009E8871 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +139,10 @@
 				40D567D719BBB5BC00888D63 /* Images.xcassets */,
 				40D567D419BBB5BC00888D63 /* WikiHere.xcdatamodeld */,
 				40D567C919BBB5BC00888D63 /* Supporting Files */,
+				677FABED19CD02C1009E8871 /* WebViewController.h */,
+				677FABEE19CD02C1009E8871 /* WebViewController.m */,
+				677FABF019CD05BA009E8871 /* TableViewController.h */,
+				677FABF119CD05BA009E8871 /* TableViewController.m */,
 			);
 			path = WikiHere;
 			sourceTree = "<group>";
@@ -309,6 +319,8 @@
 				40D567D319BBB5BC00888D63 /* AppDelegate.m in Sources */,
 				40D567CF19BBB5BC00888D63 /* main.m in Sources */,
 				40D567D619BBB5BC00888D63 /* WikiHere.xcdatamodeld in Sources */,
+				677FABF219CD05BA009E8871 /* TableViewController.m in Sources */,
+				677FABEF19CD02C1009E8871 /* WebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
