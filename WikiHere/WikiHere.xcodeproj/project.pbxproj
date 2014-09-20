@@ -27,6 +27,7 @@
 		40D567E219BBB5BC00888D63 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D567C619BBB5BC00888D63 /* CoreData.framework */; };
 		40D567EA19BBB5BC00888D63 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 40D567E819BBB5BC00888D63 /* InfoPlist.strings */; };
 		40D567EC19BBB5BC00888D63 /* WikiHereTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D567EB19BBB5BC00888D63 /* WikiHereTests.m */; };
+		40DAC0A619CCFBF100F35465 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC0A519CCFBF100F35465 /* MapViewController.m */; };
 		40ED07D919C8F7D7001B83B6 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40ED07D819C8F7D7001B83B6 /* Main_iPhone.storyboard */; };
 		7FF8A61F4FC548C780337934 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49C1DDEA1AFB43F5B9A2E3F8 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -70,6 +71,8 @@
 		40D567E719BBB5BC00888D63 /* WikiHereTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WikiHereTests-Info.plist"; sourceTree = "<group>"; };
 		40D567E919BBB5BC00888D63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		40D567EB19BBB5BC00888D63 /* WikiHereTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WikiHereTests.m; sourceTree = "<group>"; };
+		40DAC0A419CCFBF100F35465 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		40DAC0A519CCFBF100F35465 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		40ED07D819C8F7D7001B83B6 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
 		49C1DDEA1AFB43F5B9A2E3F8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -140,6 +143,8 @@
 			isa = PBXGroup;
 			children = (
 				40ED07D819C8F7D7001B83B6 /* Main_iPhone.storyboard */,
+				40DAC0A419CCFBF100F35465 /* MapViewController.h */,
+				40DAC0A519CCFBF100F35465 /* MapViewController.m */,
 				40D567D119BBB5BC00888D63 /* AppDelegate.h */,
 				40D567D219BBB5BC00888D63 /* AppDelegate.m */,
 				40D567D719BBB5BC00888D63 /* Images.xcassets */,
@@ -330,6 +335,7 @@
 				2266FB3619CDF8EA008BA9BA /* CallWikipedia.m in Sources */,
 				40D567CF19BBB5BC00888D63 /* main.m in Sources */,
 				40D567D619BBB5BC00888D63 /* WikiHere.xcdatamodeld in Sources */,
+				40DAC0A619CCFBF100F35465 /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
