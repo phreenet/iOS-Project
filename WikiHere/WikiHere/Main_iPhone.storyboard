@@ -130,7 +130,7 @@
         <!--Table View Controller - Article List-->
         <scene sceneID="2Wi-fM-jff">
             <objects>
-                <tableViewController id="J0n-rW-cdh" sceneMemberID="viewController">
+                <tableViewController id="J0n-rW-cdh" customClass="TableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="WUv-pP-SCP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -161,7 +161,7 @@
                                 </tableViewCellContentView>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="3Ca-fV-cm0" kind="push" id="qwB-in-Nnj"/>
+                                    <segue destination="3Ca-fV-cm0" kind="push" identifier="showWikipediaArticle" id="qwB-in-Nnj"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -176,10 +176,10 @@
             </objects>
             <point key="canvasLocation" x="431" y="855"/>
         </scene>
-        <!--View Controller - Wikipedia-->
+        <!--Web View Controller - Wikipedia-->
         <scene sceneID="7uu-lF-aqu">
             <objects>
-                <viewController id="3Ca-fV-cm0" sceneMemberID="viewController">
+                <viewController id="3Ca-fV-cm0" customClass="WebViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WLG-yp-PZH"/>
                         <viewControllerLayoutGuide type="bottom" id="mnd-I7-VEr"/>
@@ -198,6 +198,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Wikipedia" id="RQI-xg-375"/>
+                    <connections>
+                        <outlet property="webView" destination="OY1-Z0-dOX" id="kGF-Ep-vTx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6bd-1M-AcB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
