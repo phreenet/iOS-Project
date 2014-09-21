@@ -21,13 +21,7 @@
 
 @implementation TableViewController
 {
-  // There is probably a better way to store the table data. This is just quick and dirty,
-  // and due to my lack of Objective-C knowledge, easy to make. -DS
-  //NSArray* titles;
-  //NSArray* subtitles;
-  //NSArray* pageIDs;
   
- // NSMutableArray *pageIDs = [[NSMutableArray alloc] init];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -48,12 +42,6 @@
   
   // Calls populateArray method and fills the wikiEntries array
   _wikiEntries = [[NSMutableArray alloc] initWithArray:[CallWikipedia populateArray:location]];
-  
-  // Just initializing the arrays with dummy data for the time being. -DS
-  
-  //titles = [NSArray arrayWithObjects:@"Detroit", @"Chicago", @"New York", nil];
-  //subtitles = [NSArray arrayWithObjects: @"The Motor City", @"The Windy City", @"The Big Apple", nil];
-  //pageIDs = [NSArray arrayWithObjects: @"8687", @"6886", @"645042", nil];
 };
 
 - (void)didReceiveMemoryWarning
@@ -68,7 +56,7 @@
 }
 
 
-
+// Sets values for Wikipedia Entry
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
   static NSString *cellIdentifier = @"ArticleEntryCell";
@@ -85,13 +73,10 @@
   return cell;
 }
 
-// IMPORTANT! I could not get the segue to transition to the web view without adding this method
-// which manually activates the segue. -DS
-
+//Perform the segue transition.
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
   [self performSegueWithIdentifier:@"showWikipediaArticle" sender:nil];
-  //_webViewController.pageID = [[self.wikiEntries objectAtIndex:indexPath.row] pageID];
 }
 
 // This method is called right before the web view is instantiated -DS
@@ -107,11 +92,8 @@
                                 indexPathForSelectedRow];
     long row = [myIndexPath row];
     
-    // Set webViewController's page id accordingly.
+    // Set webViewController's pageID based on the selected WikiEntry
     _webViewController.pageID = [[self.wikiEntries objectAtIndex:row] pageid];
-    
-    
-    //webViewController.pageID = [pageIDs objectAtIndex:row];
   }
 }
 

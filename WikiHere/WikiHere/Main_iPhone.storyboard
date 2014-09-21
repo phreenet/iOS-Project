@@ -179,7 +179,7 @@
         <!--Web View Controller - Wikipedia-->
         <scene sceneID="7uu-lF-aqu">
             <objects>
-                <viewController storyboardIdentifier="WebViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3Ca-fV-cm0" customClass="WebViewController" sceneMemberID="viewController">
+                <viewController id="3Ca-fV-cm0" customClass="WebViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WLG-yp-PZH"/>
                         <viewControllerLayoutGuide type="bottom" id="mnd-I7-VEr"/>
