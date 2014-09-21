@@ -20,9 +20,3 @@
 
 
 @end
-
-//@interface TableViewController : UITableViewController
-
-//@property (strong, nonatomic) UITableView *tableView;
-
-//@end
