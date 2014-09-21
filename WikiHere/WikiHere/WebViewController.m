@@ -17,25 +17,26 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+  self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+  if (self) {
         // Custom initialization
-    }
-    return self;
+  }
+  return self;
 }
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-	
-    // All I'm doing here is appending the page id to the wikipedia url. -DS
-    NSMutableString *urlString = [NSMutableString stringWithFormat:@"http://www.wikipedia.org/wiki/?curid="];
-    [urlString appendString:_pageID];
+  [super viewDidLoad];
+  
+  //  Set the url string
+  _urlString = [NSString stringWithFormat:@"%s=%@","http://www.wikipedia.org/wiki/?curid",_pageID];
+  
     // Create a URL request
-    NSURLRequest *requestObj = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
-    // Tell the web view to show it
-    [_webView loadRequest:requestObj];
+  NSURLRequest *requestObj = [NSURLRequest requestWithURL:[NSURL URLWithString:_urlString]];
+  // Tell the web view to show it
+  [_webView loadRequest:requestObj];
 }
+
 
 - (void)didReceiveMemoryWarning
 {
