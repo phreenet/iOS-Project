@@ -67,6 +67,9 @@
   
   NSArray *articleList = [CallWikipedia populateArray:currentLocation];
   
+  NSLog(@"%@", [NSString stringWithFormat:@"articleList holds %lu objects",
+                (unsigned long)[articleList count]]);
+  
   NSMutableArray *annotations = [[NSMutableArray alloc] init];  
   
   for(WikiEntry *e in articleList) {
@@ -74,6 +77,12 @@
     a.coordinate = CLLocationCoordinate2DMake(e.lat, e.lon);
     a.title = e.title;
     a.subtitle = [NSString stringWithFormat:@"%ld",(long)e.dist];
+    
+    NSLog(@"%@", [NSString stringWithFormat:@"Current Annotation: %@ \n"
+                                            @"Distance: %@ \n"
+                                            @"Lattitude: %f \n"
+                                            @"Longitude: %f \n",
+                  a.title, a.subtitle, e.lat, e.lon]);
     
     [annotations addObject:a];
   }
