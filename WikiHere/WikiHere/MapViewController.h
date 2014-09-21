@@ -17,8 +17,8 @@
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 
-@property (nonatomic) CLLocationCoordinate2D lastPolledLocation;
-@property (nonatomic) CLLocationCoordinate2D currentRegionCenterPoint;
+@property (nonatomic) CLLocation *lastPolledLocation;
+@property (nonatomic) CLLocation *currentRegionCenterPoint;
 
 
 - (IBAction)moveToUserLocation:(id)sender;

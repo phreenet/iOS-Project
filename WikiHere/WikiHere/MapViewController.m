@@ -44,7 +44,7 @@
   [_mapView setRegion:region animated:YES];
   
   // Set the last polled location to be this one.  TODO: Find out how much this runs.
-  lastPolledLocation = userLocation.coordinate;
+  lastPolledLocation = userLocation.location;
 }
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
