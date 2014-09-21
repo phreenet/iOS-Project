@@ -11,6 +11,6 @@
 @interface WebViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
-@property (strong, nonatomic) NSString *pageID;
+@property (nonatomic) NSString *pageID;
 
 @end

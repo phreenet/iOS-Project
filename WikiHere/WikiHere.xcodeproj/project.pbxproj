@@ -11,6 +11,8 @@
 		22AC475B19CDB7C400B1D6E7 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC475519CDB7C400B1D6E7 /* Location.m */; };
 		22AC475C19CDB7C400B1D6E7 /* SHXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC475719CDB7C400B1D6E7 /* SHXMLParser.m */; };
 		22AC475D19CDB7C400B1D6E7 /* WikiEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC475919CDB7C400B1D6E7 /* WikiEntry.m */; };
+		4044DDC219CE02170087B0A3 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4044DDBF19CE02170087B0A3 /* TableViewController.m */; };
+		4044DDC319CE02170087B0A3 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4044DDC119CE02170087B0A3 /* WebViewController.m */; };
 		40CFE6ED19BBC7750086F5E5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CFE6EC19BBC7750086F5E5 /* MapKit.framework */; };
 		40D567C119BBB5BC00888D63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D567C019BBB5BC00888D63 /* Foundation.framework */; };
 		40D567C319BBB5BC00888D63 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D567C219BBB5BC00888D63 /* CoreGraphics.framework */; };
@@ -29,6 +31,9 @@
 		40D567EC19BBB5BC00888D63 /* WikiHereTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D567EB19BBB5BC00888D63 /* WikiHereTests.m */; };
 		40DAC0A619CCFBF100F35465 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC0A519CCFBF100F35465 /* MapViewController.m */; };
 		40ED07D919C8F7D7001B83B6 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40ED07D819C8F7D7001B83B6 /* Main_iPhone.storyboard */; };
+		77BF824019CE083000EB3FC0 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC475519CDB7C400B1D6E7 /* Location.m */; };
+		77BF824119CE083B00EB3FC0 /* WikiEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC475919CDB7C400B1D6E7 /* WikiEntry.m */; };
+		77BF824219CE084100EB3FC0 /* SHXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC475719CDB7C400B1D6E7 /* SHXMLParser.m */; };
 		7FF8A61F4FC548C780337934 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49C1DDEA1AFB43F5B9A2E3F8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +57,10 @@
 		22AC475719CDB7C400B1D6E7 /* SHXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHXMLParser.m; path = WikiHereTests/SHXMLParser.m; sourceTree = SOURCE_ROOT; };
 		22AC475819CDB7C400B1D6E7 /* WikiEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WikiEntry.h; path = WikiHereTests/WikiEntry.h; sourceTree = SOURCE_ROOT; };
 		22AC475919CDB7C400B1D6E7 /* WikiEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WikiEntry.m; path = WikiHereTests/WikiEntry.m; sourceTree = SOURCE_ROOT; };
+		4044DDBE19CE02170087B0A3 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		4044DDBF19CE02170087B0A3 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		4044DDC019CE02170087B0A3 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		4044DDC119CE02170087B0A3 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		40CFE6EC19BBC7750086F5E5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		40D567BD19BBB5BC00888D63 /* WikiHere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WikiHere.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40D567C019BBB5BC00888D63 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -142,6 +151,14 @@
 		40D567C819BBB5BC00888D63 /* WikiHere */ = {
 			isa = PBXGroup;
 			children = (
+				2266FB3519CDF8EA008BA9BA /* CallWikipedia.h */,
+				2266FB3419CDF8EA008BA9BA /* CallWikipedia.m */,
+				22AC475419CDB7C400B1D6E7 /* Location.h */,
+				22AC475519CDB7C400B1D6E7 /* Location.m */,
+				22AC475619CDB7C400B1D6E7 /* SHXMLParser.h */,
+				22AC475719CDB7C400B1D6E7 /* SHXMLParser.m */,
+				22AC475819CDB7C400B1D6E7 /* WikiEntry.h */,
+				22AC475919CDB7C400B1D6E7 /* WikiEntry.m */,
 				40ED07D819C8F7D7001B83B6 /* Main_iPhone.storyboard */,
 				4044DDBE19CE02170087B0A3 /* TableViewController.h */,
 				4044DDBF19CE02170087B0A3 /* TableViewController.m */,
@@ -161,14 +178,6 @@
 		40D567C919BBB5BC00888D63 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2266FB3519CDF8EA008BA9BA /* CallWikipedia.h */,
-				2266FB3419CDF8EA008BA9BA /* CallWikipedia.m */,
-				22AC475419CDB7C400B1D6E7 /* Location.h */,
-				22AC475519CDB7C400B1D6E7 /* Location.m */,
-				22AC475619CDB7C400B1D6E7 /* SHXMLParser.h */,
-				22AC475719CDB7C400B1D6E7 /* SHXMLParser.m */,
-				22AC475819CDB7C400B1D6E7 /* WikiEntry.h */,
-				22AC475919CDB7C400B1D6E7 /* WikiEntry.m */,
 				40D567CA19BBB5BC00888D63 /* WikiHere-Info.plist */,
 				40D567CB19BBB5BC00888D63 /* InfoPlist.strings */,
 				40D567CE19BBB5BC00888D63 /* main.m */,
@@ -335,8 +344,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77BF824219CE084100EB3FC0 /* SHXMLParser.m in Sources */,
+				77BF824119CE083B00EB3FC0 /* WikiEntry.m in Sources */,
+				77BF824019CE083000EB3FC0 /* Location.m in Sources */,
 				40D567D319BBB5BC00888D63 /* AppDelegate.m in Sources */,
 				2266FB3619CDF8EA008BA9BA /* CallWikipedia.m in Sources */,
+				4044DDC319CE02170087B0A3 /* WebViewController.m in Sources */,
 				40D567CF19BBB5BC00888D63 /* main.m in Sources */,
 				40D567D619BBB5BC00888D63 /* WikiHere.xcdatamodeld in Sources */,
 				4044DDC219CE02170087B0A3 /* TableViewController.m in Sources */,

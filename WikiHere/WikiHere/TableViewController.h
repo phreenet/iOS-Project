@@ -8,8 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+@class WebViewController;
 
-@property (strong, nonatomic) UITableView *tableView;
+@interface TableViewController : UITableViewController
+
+@property (strong, nonatomic) WebViewController *webViewController;
+
+@property (nonatomic, retain) NSArray *wikiEntries;
+
 
 @end
+
+//@interface TableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+
+//@property (strong, nonatomic) UITableView *tableView;
+
+//@end
