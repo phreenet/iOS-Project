@@ -12,5 +12,6 @@
 
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
 @property (nonatomic) NSString *pageID;
+@property (strong, nonatomic) NSString *urlString;
 
 @end

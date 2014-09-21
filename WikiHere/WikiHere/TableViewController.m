@@ -59,12 +59,8 @@
 // Sets values for Wikipedia Entry
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  static NSString *cellIdentifier = @"ArticleEntryCell";
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-  if(cell == nil)
-  {
-    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-  }
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ArticleEntryCell"];
+  
   
   // Configure the cell...THIS IS IMPORTANT to set text!!
   cell.textLabel.text = [[self.wikiEntries objectAtIndex:indexPath.row] title];
@@ -79,9 +75,11 @@
   [self performSegueWithIdentifier:@"showWikipediaArticle" sender:nil];
 }
 
+
 // This method is called right before the web view is instantiated -DS
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+  
   // Here is where we pass the page ID to the Web View Controller.
   if ([[segue identifier] isEqualToString:@"showWikipediaArticle"])
   {
@@ -94,6 +92,7 @@
     
     // Set webViewController's pageID based on the selected WikiEntry
     _webViewController.pageID = [[self.wikiEntries objectAtIndex:row] pageid];
+    
   }
 }
 

@@ -10,7 +10,9 @@
 
 @class WebViewController;
 
-@interface TableViewController : UITableViewController
+@interface TableViewController : UITableViewController 
+
+@property (strong, nonatomic) UITableView *tableView;
 
 @property (strong, nonatomic) WebViewController *webViewController;
 
@@ -19,7 +21,7 @@
 
 @end
 
-//@interface TableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+//@interface TableViewController : UITableViewController
 
 //@property (strong, nonatomic) UITableView *tableView;
 
