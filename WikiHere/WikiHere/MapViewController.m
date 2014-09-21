@@ -18,7 +18,8 @@
 
 // TODO: Implement map drag update, update articles if moved more than X meters.
 
-// TODO: Fix didUpdateUserLocation so that zoom region doesn't change zoom level if user has changed it manually.  Only zoom to default if user presses location button or on app startup.
+// TODO: Fix didUpdateUserLocation so that zoom region doesn't change zoom level if user has
+// changed it manually.  Only zoom to default if user presses location button or on app startup.
 
 // TODO: Implement WYPopoverController for settings button.
 
@@ -46,9 +47,6 @@
 
 }
 
-
-
-
 - (IBAction)moveToUserLocation:(id)sender {
   
   // Get user location and zoom to that point.
@@ -59,7 +57,8 @@
   
   [_mapView setRegion:region animated:YES];
   
-  // TODO: This next block is for testing only, need to setup app in such a way that only if last distance was greater
+  // TODO: This next block is for testing only, need to setup app in such a way that only if
+  // last distance was greater
   
   Location *currentLocation = [[Location alloc] initWithInfo:10000
                                                             :userLocation.coordinate.latitude
@@ -80,10 +79,26 @@
   }
   
   [_mapView addAnnotations:annotations];
+}
+
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+  // Reuse annotations just like we re-use table cells in a tableview.
+ 
+  MKPinAnnotationView *annotationView = (MKPinAnnotationView *)
+  [mapView dequeueReusableAnnotationViewWithIdentifier:@"mapViewAnnotationIdentifier"];
+  
+  if (annotationView == nil) {
+    annotationView  = [[MKPinAnnotationView alloc]
+                                  initWithAnnotation:annotation
+                                     reuseIdentifier:@"mapViewAnnotationIdentifier"];
+  }
+  
+  annotationView.animatesDrop = YES;
+  annotationView.canShowCallout = YES;
   
   
-  
-  
+  return annotationView;
 }
 
 @end
