@@ -14,7 +14,7 @@
 
 @implementation MapViewController
 
-@synthesize lastLocation;
+@synthesize lastPolledLocation, currentRegionCenterPoint;
 
 // TODO: Implement map drag update, update articles if moved more than X meters.
 
@@ -39,12 +39,18 @@
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
   // Get user location and zoom to that point.
   MKCoordinateRegion region =
-  MKCoordinateRegionMakeWithDistance(userLocation.location.coordinate, 10000, 10000);
-  
-  [_mapView setRegion:region animated:YES];
-//  _mapView.centerCoordinate = userLocation.location.coordinate;
-  
+  MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 10000, 10000);
 
+  [_mapView setRegion:region animated:YES];
+  
+  // Set the last polled location to be this one.  TODO: Find out how much this runs.
+  lastPolledLocation = userLocation.coordinate;
+}
+
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
+  
+  
+  
 }
 
 - (IBAction)moveToUserLocation:(id)sender {
@@ -65,6 +71,7 @@
                                                             :userLocation.coordinate.longitude];
   
   
+  
   NSArray *articleList = [CallWikipedia populateArray:currentLocation];
   
   NSLog(@"%@", [NSString stringWithFormat:@"articleList holds %lu objects",
@@ -77,12 +84,15 @@
     a.coordinate = CLLocationCoordinate2DMake(e.lat, e.lon);
     a.title = e.title;
     a.subtitle = [NSString stringWithFormat:@"%ld",(long)e.dist];
+    a.pageID = e.pageid;
+    
     
     NSLog(@"%@", [NSString stringWithFormat:@"Current Annotation: %@ \n"
                                             @"Distance: %@ \n"
                                             @"Lattitude: %f \n"
-                                            @"Longitude: %f \n",
-                  a.title, a.subtitle, e.lat, e.lon]);
+                                            @"Longitude: %f \n"
+                                            @"pageID: %@ \n",
+                  a.title, a.subtitle, a.coordinate.latitude, a.coordinate.longitude, a.pageID]);
     
     [annotations addObject:a];
   }
