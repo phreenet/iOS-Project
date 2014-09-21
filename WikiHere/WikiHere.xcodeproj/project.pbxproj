@@ -31,6 +31,7 @@
 		40D567EC19BBB5BC00888D63 /* WikiHereTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D567EB19BBB5BC00888D63 /* WikiHereTests.m */; };
 		40DAC0A619CCFBF100F35465 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC0A519CCFBF100F35465 /* MapViewController.m */; };
 		40ED07D919C8F7D7001B83B6 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40ED07D819C8F7D7001B83B6 /* Main_iPhone.storyboard */; };
+		40F9BBF819CE7EBA00164C17 /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 40F9BBF719CE7EBA00164C17 /* Annotation.m */; };
 		77BF824019CE083000EB3FC0 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC475519CDB7C400B1D6E7 /* Location.m */; };
 		77BF824119CE083B00EB3FC0 /* WikiEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC475919CDB7C400B1D6E7 /* WikiEntry.m */; };
 		77BF824219CE084100EB3FC0 /* SHXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC475719CDB7C400B1D6E7 /* SHXMLParser.m */; };
@@ -83,6 +84,8 @@
 		40DAC0A419CCFBF100F35465 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		40DAC0A519CCFBF100F35465 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		40ED07D819C8F7D7001B83B6 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
+		40F9BBF619CE7EBA00164C17 /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
+		40F9BBF719CE7EBA00164C17 /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotation.m; sourceTree = "<group>"; };
 		49C1DDEA1AFB43F5B9A2E3F8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -151,6 +154,8 @@
 		40D567C819BBB5BC00888D63 /* WikiHere */ = {
 			isa = PBXGroup;
 			children = (
+				40F9BBF619CE7EBA00164C17 /* Annotation.h */,
+				40F9BBF719CE7EBA00164C17 /* Annotation.m */,
 				2266FB3519CDF8EA008BA9BA /* CallWikipedia.h */,
 				2266FB3419CDF8EA008BA9BA /* CallWikipedia.m */,
 				22AC475419CDB7C400B1D6E7 /* Location.h */,
@@ -351,6 +356,7 @@
 				2266FB3619CDF8EA008BA9BA /* CallWikipedia.m in Sources */,
 				4044DDC319CE02170087B0A3 /* WebViewController.m in Sources */,
 				40D567CF19BBB5BC00888D63 /* main.m in Sources */,
+				40F9BBF819CE7EBA00164C17 /* Annotation.m in Sources */,
 				40D567D619BBB5BC00888D63 /* WikiHere.xcdatamodeld in Sources */,
 				4044DDC219CE02170087B0A3 /* TableViewController.m in Sources */,
 				40DAC0A619CCFBF100F35465 /* MapViewController.m in Sources */,
