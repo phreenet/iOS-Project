@@ -7,8 +7,8 @@
 //
 
 #import "CallWikipedia.h"
-#import "SHXMLParser.h"
 #import "WikiEntry.h"
+#import <SHXMLParser/SHXMLParser.h>
 
 
 
