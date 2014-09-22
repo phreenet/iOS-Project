@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2266FB3619CDF8EA008BA9BA /* CallWikipedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 2266FB3419CDF8EA008BA9BA /* CallWikipedia.m */; };
 		22AC475B19CDB7C400B1D6E7 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC475519CDB7C400B1D6E7 /* Location.m */; };
-		22AC475C19CDB7C400B1D6E7 /* SHXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC475719CDB7C400B1D6E7 /* SHXMLParser.m */; };
 		22AC475D19CDB7C400B1D6E7 /* WikiEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC475919CDB7C400B1D6E7 /* WikiEntry.m */; };
 		4044DDC219CE02170087B0A3 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4044DDBF19CE02170087B0A3 /* TableViewController.m */; };
 		4044DDC319CE02170087B0A3 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4044DDC119CE02170087B0A3 /* WebViewController.m */; };
@@ -34,7 +33,6 @@
 		40F9BBF819CE7EBA00164C17 /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 40F9BBF719CE7EBA00164C17 /* Annotation.m */; };
 		77BF824019CE083000EB3FC0 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC475519CDB7C400B1D6E7 /* Location.m */; };
 		77BF824119CE083B00EB3FC0 /* WikiEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC475919CDB7C400B1D6E7 /* WikiEntry.m */; };
-		77BF824219CE084100EB3FC0 /* SHXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AC475719CDB7C400B1D6E7 /* SHXMLParser.m */; };
 		7FF8A61F4FC548C780337934 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49C1DDEA1AFB43F5B9A2E3F8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -54,8 +52,6 @@
 		2266FB3519CDF8EA008BA9BA /* CallWikipedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallWikipedia.h; sourceTree = "<group>"; };
 		22AC475419CDB7C400B1D6E7 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = WikiHereTests/Location.h; sourceTree = SOURCE_ROOT; };
 		22AC475519CDB7C400B1D6E7 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = WikiHereTests/Location.m; sourceTree = SOURCE_ROOT; };
-		22AC475619CDB7C400B1D6E7 /* SHXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHXMLParser.h; path = WikiHereTests/SHXMLParser.h; sourceTree = SOURCE_ROOT; };
-		22AC475719CDB7C400B1D6E7 /* SHXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHXMLParser.m; path = WikiHereTests/SHXMLParser.m; sourceTree = SOURCE_ROOT; };
 		22AC475819CDB7C400B1D6E7 /* WikiEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WikiEntry.h; path = WikiHereTests/WikiEntry.h; sourceTree = SOURCE_ROOT; };
 		22AC475919CDB7C400B1D6E7 /* WikiEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WikiEntry.m; path = WikiHereTests/WikiEntry.m; sourceTree = SOURCE_ROOT; };
 		4044DDBE19CE02170087B0A3 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
@@ -160,8 +156,6 @@
 				2266FB3419CDF8EA008BA9BA /* CallWikipedia.m */,
 				22AC475419CDB7C400B1D6E7 /* Location.h */,
 				22AC475519CDB7C400B1D6E7 /* Location.m */,
-				22AC475619CDB7C400B1D6E7 /* SHXMLParser.h */,
-				22AC475719CDB7C400B1D6E7 /* SHXMLParser.m */,
 				22AC475819CDB7C400B1D6E7 /* WikiEntry.h */,
 				22AC475919CDB7C400B1D6E7 /* WikiEntry.m */,
 				40ED07D819C8F7D7001B83B6 /* Main_iPhone.storyboard */,
@@ -349,7 +343,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77BF824219CE084100EB3FC0 /* SHXMLParser.m in Sources */,
 				77BF824119CE083B00EB3FC0 /* WikiEntry.m in Sources */,
 				77BF824019CE083000EB3FC0 /* Location.m in Sources */,
 				40D567D319BBB5BC00888D63 /* AppDelegate.m in Sources */,
@@ -368,7 +361,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				40D567EC19BBB5BC00888D63 /* WikiHereTests.m in Sources */,
-				22AC475C19CDB7C400B1D6E7 /* SHXMLParser.m in Sources */,
 				22AC475B19CDB7C400B1D6E7 /* Location.m in Sources */,
 				22AC475D19CDB7C400B1D6E7 /* WikiEntry.m in Sources */,
 			);
