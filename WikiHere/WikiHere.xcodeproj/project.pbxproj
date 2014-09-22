@@ -111,6 +111,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4031C94019CFA516005B107C /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				40F9BBF619CE7EBA00164C17 /* Annotation.h */,
+				40F9BBF719CE7EBA00164C17 /* Annotation.m */,
+				4044DDBE19CE02170087B0A3 /* TableViewController.h */,
+				4044DDBF19CE02170087B0A3 /* TableViewController.m */,
+				4044DDC019CE02170087B0A3 /* WebViewController.h */,
+				4044DDC119CE02170087B0A3 /* WebViewController.m */,
+				40DAC0A419CCFBF100F35465 /* MapViewController.h */,
+				40DAC0A519CCFBF100F35465 /* MapViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		4031C94119CFA54D005B107C /* Model  */ = {
+			isa = PBXGroup;
+			children = (
+				4031C93D19CFA48B005B107C /* WikiEntry.h */,
+				4031C93E19CFA48B005B107C /* WikiEntry.m */,
+				2266FB3519CDF8EA008BA9BA /* CallWikipedia.h */,
+				2266FB3419CDF8EA008BA9BA /* CallWikipedia.m */,
+				4031C93A19CFA46A005B107C /* Location.h */,
+				4031C93B19CFA46A005B107C /* Location.m */,
+			);
+			name = "Model ";
+			sourceTree = "<group>";
+		};
+		4031C94219CFA59E005B107C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				40ED07D819C8F7D7001B83B6 /* Main_iPhone.storyboard */,
+				40D567D719BBB5BC00888D63 /* Images.xcassets */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		40D567B419BBB5BC00888D63 = {
 			isa = PBXGroup;
 			children = (
@@ -148,25 +185,9 @@
 		40D567C819BBB5BC00888D63 /* WikiHere */ = {
 			isa = PBXGroup;
 			children = (
-				4031C93D19CFA48B005B107C /* WikiEntry.h */,
-				4031C93E19CFA48B005B107C /* WikiEntry.m */,
-				40F9BBF619CE7EBA00164C17 /* Annotation.h */,
-				40F9BBF719CE7EBA00164C17 /* Annotation.m */,
-				2266FB3519CDF8EA008BA9BA /* CallWikipedia.h */,
-				2266FB3419CDF8EA008BA9BA /* CallWikipedia.m */,
-				4031C93A19CFA46A005B107C /* Location.h */,
-				4031C93B19CFA46A005B107C /* Location.m */,
-				40ED07D819C8F7D7001B83B6 /* Main_iPhone.storyboard */,
-				4044DDBE19CE02170087B0A3 /* TableViewController.h */,
-				4044DDBF19CE02170087B0A3 /* TableViewController.m */,
-				4044DDC019CE02170087B0A3 /* WebViewController.h */,
-				4044DDC119CE02170087B0A3 /* WebViewController.m */,
-				40DAC0A419CCFBF100F35465 /* MapViewController.h */,
-				40DAC0A519CCFBF100F35465 /* MapViewController.m */,
-				40D567D119BBB5BC00888D63 /* AppDelegate.h */,
-				40D567D219BBB5BC00888D63 /* AppDelegate.m */,
-				40D567D719BBB5BC00888D63 /* Images.xcassets */,
-				40D567D419BBB5BC00888D63 /* WikiHere.xcdatamodeld */,
+				4031C94219CFA59E005B107C /* View */,
+				4031C94019CFA516005B107C /* View Controllers */,
+				4031C94119CFA54D005B107C /* Model  */,
 				40D567C919BBB5BC00888D63 /* Supporting Files */,
 			);
 			path = WikiHere;
@@ -175,6 +196,9 @@
 		40D567C919BBB5BC00888D63 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				40D567D119BBB5BC00888D63 /* AppDelegate.h */,
+				40D567D219BBB5BC00888D63 /* AppDelegate.m */,
+				40D567D419BBB5BC00888D63 /* WikiHere.xcdatamodeld */,
 				40D567CA19BBB5BC00888D63 /* WikiHere-Info.plist */,
 				40D567CB19BBB5BC00888D63 /* InfoPlist.strings */,
 				40D567CE19BBB5BC00888D63 /* main.m */,
