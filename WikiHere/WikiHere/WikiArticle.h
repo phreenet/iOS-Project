@@ -1,4 +1,4 @@
-ç//
+//
 //  WikiArticle.h
 //  WikiHere
 //
