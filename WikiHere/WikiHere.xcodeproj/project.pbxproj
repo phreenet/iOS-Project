@@ -129,6 +129,7 @@
 		4031C94119CFA54D005B107C /* Model  */ = {
 			isa = PBXGroup;
 			children = (
+				40D567D419BBB5BC00888D63 /* WikiHere.xcdatamodeld */,
 				4031C93D19CFA48B005B107C /* WikiEntry.h */,
 				4031C93E19CFA48B005B107C /* WikiEntry.m */,
 				2266FB3519CDF8EA008BA9BA /* CallWikipedia.h */,
@@ -198,7 +199,6 @@
 			children = (
 				40D567D119BBB5BC00888D63 /* AppDelegate.h */,
 				40D567D219BBB5BC00888D63 /* AppDelegate.m */,
-				40D567D419BBB5BC00888D63 /* WikiHere.xcdatamodeld */,
 				40D567CA19BBB5BC00888D63 /* WikiHere-Info.plist */,
 				40D567CB19BBB5BC00888D63 /* InfoPlist.strings */,
 				40D567CE19BBB5BC00888D63 /* main.m */,
