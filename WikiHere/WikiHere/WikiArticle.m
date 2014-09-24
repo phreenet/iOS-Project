@@ -9,6 +9,9 @@
 #import "WikiArticle.h"
 
 
+////// THIS IS FOR CORE DATA TESTING
+////// DON'T TOUCH THIS !
+
 @implementation WikiArticle
 
 @dynamic articleDistance;

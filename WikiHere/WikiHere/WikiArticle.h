@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+////// THIS IS FOR CORE DATA TESTING
+////// DON'T TOUCH THIS !
+
 
 @interface WikiArticle : NSManagedObject
 
