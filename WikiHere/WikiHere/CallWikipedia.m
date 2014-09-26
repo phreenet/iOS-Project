@@ -10,13 +10,14 @@
 #import "WikiEntry.h"
 #import <SHXMLParser/SHXMLParser.h>
 
-
+static NSArray *mainArray;
 
 @implementation CallWikipedia
 
 
 
-+ (NSArray *) populateArray: (Location *) newLocation
+
++ (void) populateArray: (Location *) newLocation
 {
     
     Location *location = newLocation;
@@ -34,12 +35,12 @@
     
     NSArray *classVariables = [NSArray arrayWithObjects:@"pageid", @"title", @"lat", @"lon", @"dist", nil];
     
-    NSArray *mainArray = [[NSArray alloc] init];
+    mainArray = [[NSArray alloc] init];
     
     mainArray = [SHXMLParser convertDictionaryArray:dataArray toObjectArrayWithClassName: @"WikiEntry" classVariables:classVariables];
     
     
-    /*
+    
     NSLog(@"\nTest Array: \n\n");
     
      //this just logs through the array to ensure it's built properly
@@ -49,12 +50,13 @@
         NSLog(@"lat: %f", test.lat);
         NSLog(@"lon: %f", test.lon);
         NSLog(@"dist: %d\n\n", test.dist);
-    } */
+    }
     
-    return mainArray;
 }
 
-
++ (NSArray *) getMainArray {
+    return mainArray;
+}
 
 
 @end

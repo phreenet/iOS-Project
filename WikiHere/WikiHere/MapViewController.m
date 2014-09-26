@@ -69,8 +69,8 @@
     Location *currentLocation = [[Location alloc] initWithRadius:10000 newLocation:userLocation];
   
   
-  
-  NSArray *articleList = [CallWikipedia populateArray:currentLocation];
+    [CallWikipedia populateArray:currentLocation];
+  NSArray *articleList = [CallWikipedia getMainArray];
   
   NSLog(@"%@", [NSString stringWithFormat:@"articleList holds %lu objects",
                 (unsigned long)[articleList count]]);
