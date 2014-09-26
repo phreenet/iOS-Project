@@ -63,7 +63,22 @@
   
   // Configure the cell...THIS IS IMPORTANT to set text!!
   cell.textLabel.text = [[self.wikiEntries objectAtIndex:indexPath.row] title];
-  cell.detailTextLabel.text = [[self.wikiEntries objectAtIndex:indexPath.row] pageid];
+  
+  /****TO BE ADDED TO MODEL LATER****/
+  // Get distance value, convert from meters to miles
+  NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+  
+  [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+  
+  [formatter setMaximumFractionDigits:2];
+  
+  [formatter setRoundingMode: NSNumberFormatterRoundUp];
+  
+  NSString *strDist = [formatter stringFromNumber:[NSNumber numberWithFloat:[[self.wikiEntries objectAtIndex:indexPath.row] dist] / 1609.34]];
+  
+  //NSString *strDist = [@([[self.wikiEntries objectAtIndex:indexPath.row] dist] / 1609.34) stringValue];
+  cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ miles", strDist];
+
   
   return cell;
 }
