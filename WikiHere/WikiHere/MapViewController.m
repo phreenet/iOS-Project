@@ -65,14 +65,12 @@
   
   // TODO: This next block is for testing only, need to setup app in such a way that only if
   // last distance was greater
-  
-  Location *currentLocation = [[Location alloc] initWithInfo:10000
-                                                            :userLocation.coordinate.latitude
-                                                            :userLocation.coordinate.longitude];
+    
+    Location *currentLocation = [[Location alloc] initWithRadius:10000 newLocation:userLocation];
   
   
-  
-  NSArray *articleList = [CallWikipedia populateArray:currentLocation];
+    [CallWikipedia populateArray:currentLocation];
+  NSArray *articleList = [CallWikipedia getMainArray];
   
   NSLog(@"%@", [NSString stringWithFormat:@"articleList holds %lu objects",
                 (unsigned long)[articleList count]]);

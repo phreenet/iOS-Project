@@ -22,14 +22,11 @@
 #import "Location.h"
 #import "WikiEntry.h"
 
-@interface CallWikipedia : NSObject {
-    
-}
+@interface CallWikipedia : NSObject
 
 
-
-
-+ (NSArray *) populateArray: (Location *) newLocation;
++ (void) populateArray: (Location *) newLocation;
++ (NSArray *) getMainArray;
 
 
 

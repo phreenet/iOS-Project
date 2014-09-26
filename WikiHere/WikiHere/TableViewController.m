@@ -37,11 +37,10 @@
 {
   [super viewDidLoad];
   
-  // Sets the location.  This will be dynamic in later phase
-  Location *location = [[Location alloc] initWithInfo:1000 :37.786971 : -122.399677];
+  
   
   // Calls populateArray method and fills the wikiEntries array
-  _wikiEntries = [[NSMutableArray alloc] initWithArray:[CallWikipedia populateArray:location]];
+  _wikiEntries = [[NSMutableArray alloc] initWithArray:[CallWikipedia getMainArray]];
 };
 
 - (void)didReceiveMemoryWarning
