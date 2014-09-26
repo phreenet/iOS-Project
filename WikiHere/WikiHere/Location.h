@@ -7,20 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Annotation.h"
 
 @interface Location : NSObject {
-    NSInteger radius;
-    double latitude;
-    double longitude;
+    int radius;
+    MKUserLocation *location;
 }
 
-@property (nonatomic, readwrite) NSInteger radius;
-@property (nonatomic) double latitude;
-@property (nonatomic) double longitude;
+@property (nonatomic, assign) int radius;
+@property (nonatomic) MKUserLocation *location;
 
 - (id) init;
 
-- (id) initWithInfo: (NSInteger) newRadius : (double) newLatitude : (double) newLongitude;
+- (id) initWithRadius: (int) newRadius newLocation: (MKUserLocation *) newLocation;
 
 - (NSString *) generateURL;
 
