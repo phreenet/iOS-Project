@@ -11,7 +11,12 @@
 @interface WebViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
+
 @property (nonatomic) NSString *pageID;
 @property (strong, nonatomic) NSString *urlString;
+
+- (IBAction)back:(id)sender;
+
+- (IBAction)forward:(id)sender;
 
 @end
