@@ -11,6 +11,7 @@
 #import "CallWikipedia.h"
 #import "Location.h"
 #import "WikiEntry.h"
+#import "AppDelegate.h"
 
 
 @implementation TableViewController
@@ -24,6 +25,9 @@
                                            selector:@selector(updateDataSource:)
                                                name:@"Array Complete"
                                              object:nil];
+  
+  AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+  _wikiEntries = [appDelegate tableViewStartingArray];
 }
 
 -(void)updateDataSource:(NSNotification *)notification

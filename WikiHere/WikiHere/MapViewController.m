@@ -10,6 +10,7 @@
 #import "WikiModel.h"
 #import "WikiEntry.h"
 #import "Annotation.h"
+#import "AppDelegate.h"
 
 static const int    MAX_DISTANCE_IN_METERS_MOVE_FOR_UPDATE = 5000;
 static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
@@ -108,6 +109,10 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
   NSLog(@"reloadData called");
   
   NSArray *articleList = [[notification userInfo] objectForKey:@"wikiEntryArray"];
+  
+  // TODO: Is this really the best way to provide a starting data set to the TableViewController
+  AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+  [appDelegate setTableViewStartingArray:articleList];
   
   
   NSLog(@"%@", [NSString stringWithFormat:@"articleList holds %lu objects",
