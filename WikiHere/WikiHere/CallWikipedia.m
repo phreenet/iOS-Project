@@ -61,13 +61,14 @@ static NSArray *mainArray;
   __block NSData *curlResponse;
   __block BOOL error = NO;
   
-  NSString *url = [NSString stringWithFormat:@"http://en.wikipedia.org/w/api.php?action=query"
+  NSString *url = [[NSString stringWithFormat:@"http://en.wikipedia.org/w/api.php?action=query"
                          @"&list=geosearch"
                          @"&gslimit=50"     // TODO: Magic number remove!
                          @"&gsmaxdim=3000"  // TODO: Magic number remove!
                          @"&gsradius=%ld"
                          @"&gscoord=%g|%g",
-                         radius, location.coordinate.latitude, location.coordinate.longitude];
+                         radius, location.coordinate.latitude, location.coordinate.longitude]
+                      stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
   
   NSLog(@"Current URL request starting: %@", url);
   
