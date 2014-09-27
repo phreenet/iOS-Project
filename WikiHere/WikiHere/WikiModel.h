@@ -15,6 +15,7 @@
 
 @property (nonatomic, readonly) NSMutableArray *wikiEntryArray;
 
-- (id)initWithLocation: (Location *) newLocation;
+- (void) populateWikiEntryArray: (CLLocation *) newLocation
+               withSearchRadius: (int) radius;
 
 @end

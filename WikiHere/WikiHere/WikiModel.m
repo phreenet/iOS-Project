@@ -18,22 +18,17 @@
 
 @implementation WikiModel
 
-- (id) initWithLocation:(Location *)newLocation
-{
-    [self forwardWikiEntryArray: newLocation];
-    self = [super init];
-    if (self)
-    {
-        //
-    }
-    return self;
-}
 
-- (void) forwardWikiEntryArray: (Location *)newLocation;
+- (void) populateWikiEntryArray: (CLLocation *)newLocation
+              withSearchRadius: (int) radius
 {
     
     //generate URL from location
-    NSString *url = [newLocation generateURL];
+    NSString *wikiURL = [NSString stringWithFormat:@"https://en.wikipedia.org/w/api.php?action=query&list=geosearch&gsradius=%d&gscoord=%g|%g&format=xml", radius,
+                         newLocation.coordinate.latitude, newLocation.coordinate.longitude];
+    
+    //this code somehow makes the url palateable to WikiPedia
+    NSString *url = [wikiURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
     //configure the session
     NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -41,7 +36,7 @@
     //create the delegate free session because we're using NSNotificationCenter
     NSURLSession *delagateFreeSession = [NSURLSession sessionWithConfiguration:defaultConfigObject delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
     
-    [[delagateFreeSession dataTaskWithURL:[NSURL URLWithString:url] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+    [[delagateFreeSession dataTaskWithURL:[NSURL URLWithString:url]  completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
     {
         if (!error) {
             //log response for debugging
@@ -79,7 +74,7 @@
              }
              */
             
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"Array Complete" object:self];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"Array Complete" object:self.wikiEntryArray];
         }
         else //if there was an error
         {
@@ -88,7 +83,7 @@
 
         
         
-    }]];
+    }]resume];
     
     
 }
