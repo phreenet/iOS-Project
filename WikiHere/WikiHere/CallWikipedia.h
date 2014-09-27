@@ -28,6 +28,10 @@
 + (void) populateArray: (Location *) newLocation;
 + (NSArray *) getMainArray;
 
+// Temp patch until refactor
++(NSArray *) searchWikipediaArticlesAroundLocation:(CLLocation *)location
+                                  withSearchRadius:(NSInteger)radius;
+
 
 
 

@@ -14,9 +14,6 @@ static NSArray *mainArray;
 
 @implementation CallWikipedia
 
-
-
-
 + (void) populateArray: (Location *) newLocation
 {
     
@@ -52,6 +49,56 @@ static NSArray *mainArray;
         NSLog(@"dist: %d\n\n", test.dist);
     }
     
+}
+
++(NSArray *) searchWikipediaArticlesAroundLocation:(CLLocation *)location
+                                  withSearchRadius:(NSInteger)radius;
+{
+  __block NSData *curlResponse;
+  __block BOOL error = NO;
+  
+  NSString *url = [NSString stringWithFormat:@"http://en.wikipedia.org/w/api.php?action=query"
+                         @"&list=geosearch"
+                         @"&gslimit=50"     // TODO: Magic number remove!
+                         @"&gsmaxdim=3000"  // TODO: Magic number remove!
+                         @"&gsradius=%ld"
+                         @"&gscoord=%g|%g",
+                         radius, location.coordinate.latitude, location.coordinate.longitude];
+  
+  NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+  NSOperationQueue  *queue = [[NSOperationQueue alloc] init];
+  
+  [NSURLConnection sendAsynchronousRequest:request
+                                     queue:queue
+                         completionHandler:^(NSURLResponse *response,
+                                             NSData *data,
+                                             NSError *connectionError) {
+                           if (connectionError) {
+                             error = YES;
+                           } else {
+                             curlResponse = data;
+                           }
+                         }];
+  
+  if (!error) {
+    SHXMLParser     *parser         = [[SHXMLParser alloc] init];
+    NSDictionary    *resultObject   = [parser parseData: curlResponse];
+    NSArray         *dataArray      = [SHXMLParser getDataAtPath:@"api.query.geosearch.gs"
+                                                fromResultObject:resultObject];
+    
+    NSArray *classVariables = [NSArray arrayWithObjects:@"pageid", @"title", @"lat", @"lon", @"dist", nil];
+    
+    mainArray = [[NSArray alloc] init];
+    
+    mainArray = [SHXMLParser convertDictionaryArray:dataArray
+                         toObjectArrayWithClassName: @"WikiEntry"
+                                     classVariables:classVariables];
+    
+    return dataArray;
+    
+  } else {
+    return nil;
+  }
 }
 
 + (NSArray *) getMainArray {
