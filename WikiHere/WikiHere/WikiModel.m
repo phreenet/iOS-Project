@@ -47,7 +47,7 @@
         
         //now for our fabulous parser
         //this parses into an array of NSDictionary objects
-        SHXMLParser *parser = [[SHXMLParser alloc] init];
+        SHXMLParser     *parser         = [[SHXMLParser alloc] init];
         NSDictionary    *resultObject   = [parser parseData: data];
         NSArray         *dataArray      = [SHXMLParser getDataAtPath:@"api.query.geosearch.gs"
                                                     fromResultObject:resultObject];
