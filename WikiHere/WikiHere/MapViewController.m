@@ -115,6 +115,7 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
   
   if(!_annotations) _annotations = [[NSMutableArray alloc] init];
   
+  [_mapView removeAnnotations:_annotations]; // Remove all existing pins. 
   [_annotations removeAllObjects]; // Make sure array is empty
   
   for(WikiEntry *e in articleList) {
