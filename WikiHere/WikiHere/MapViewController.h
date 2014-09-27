@@ -13,12 +13,7 @@
 
 @interface MapViewController : UIViewController <MKMapViewDelegate>
 
-// TODO: Make MapViewController a delegate of the article list model.
-
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
-
-@property (nonatomic) CLLocation *lastPolledLocation;
-@property (nonatomic) CLLocation *currentRegionCenterPoint;
 
 
 - (IBAction)moveToUserLocation:(id)sender;
