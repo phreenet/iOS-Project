@@ -12,7 +12,8 @@
 #import "CallWikipedia.h"
 #import "Annotation.h"
 
-#define MAX_DISTANCE_IN_METERS_MOVE_FOR_UPDATE  5000;  // 5000 m move required to ping Wikipedia.
+static const int    MAX_DISTANCE_IN_METERS_MOVE_FOR_UPDATE = 5000;
+static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
 
 @implementation MapViewController
 
@@ -47,9 +48,10 @@
   
   // Checks to see if we should be updating after this move.
   if ([self shouldUpdateMapAtLocation:centerLocation]) {
-    [self updateDataSourceWithLocation:centerLocation];
     NSLog(@"Updating Data Source After Region Change: %@", [NSString stringWithFormat:@"%f %f",
-                                     centerPoint.latitude, centerPoint.longitude]);
+                                                      centerPoint.latitude, centerPoint.longitude]);
+    
+    [self updateDataSourceWithLocation:centerLocation];
   }
 }
 
@@ -97,9 +99,16 @@
   // Set lastPolledLocation to the one we are about to execute.
   _lastArticleUpdateLocation = currentLocation;
   
-  // Fetch article list form Wikipedia.
-  NSArray *articleList = [CallWikipedia searchWikipediaArticlesAroundLocation:currentLocation
-                                                             withSearchRadius:10000];
+  // Fetch article list from Wikipedia v1.0 -- OLD WAY - PLEASE STOP.
+  Location *location = [[Location alloc] initWithRadius:10000
+                  newLocation:CLLocationCoordinate2DMake(currentLocation.coordinate.latitude,
+                                                         currentLocation.coordinate.longitude)];
+  [CallWikipedia populateArray:location];
+  NSArray *articleList = [CallWikipedia getMainArray];
+  
+  // Fetch article list from Wikipedia v2.0 -- NOT WORKING ATM
+//  NSArray *articleList = [CallWikipedia searchWikipediaArticlesAroundLocation:currentLocation
+//                                                             withSearchRadius:10000];
   
   NSLog(@"%@", [NSString stringWithFormat:@"articleList holds %lu objects",
                 (unsigned long)[articleList count]]);
@@ -129,6 +138,11 @@
 
 - (BOOL)shouldUpdateMapAtLocation:(CLLocation *) currentLocation
 {
+  // Check User Zoom Level by reading one of the region spans. 
+  if (self.mapView.region.span.latitudeDelta > MAX_SPAN_IN_DEGREES_FOR_UPDATE) {
+    return NO;
+  }
+  
   // Check distance to see if we are more than MAX_DIST... from last polled location.
   CLLocationDistance distance = [currentLocation distanceFromLocation:_lastArticleUpdateLocation];
   return distance > MAX_DISTANCE_IN_METERS_MOVE_FOR_UPDATE;
