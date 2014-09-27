@@ -13,35 +13,25 @@
 #import "WikiEntry.h"
 
 
-@interface TableViewController() {
-  
-}
-
-@end
-
 @implementation TableViewController
-{
-  
-}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-  self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-  if (self) {
-    // Custom initialization
-  }
-  return self;
-}
 
 - (void)viewDidLoad
 {
   [super viewDidLoad];
   
-  
-  
-  // Calls populateArray method and fills the wikiEntries array
-  _wikiEntries = [[NSMutableArray alloc] initWithArray:[CallWikipedia getMainArray]];
-};
+  // Listen for WikiModel to release updates.
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(updateDataSource:)
+                                               name:@"Array Complete"
+                                             object:nil];
+}
+
+-(void)updateDataSource:(NSNotification *)notification
+{
+  _wikiEntries = [[notification userInfo] objectForKey:@"wikiEntryArray"];
+  [self.tableView reloadData];
+}
+
 
 - (void)didReceiveMemoryWarning
 {

@@ -10,7 +10,6 @@
 
 @implementation WikiModel
 
-
 - (void) searchWikipediaArticlesAroundLocation:(CLLocation *) newLocation
                               withSearchRadius:(NSInteger) radius
 {
