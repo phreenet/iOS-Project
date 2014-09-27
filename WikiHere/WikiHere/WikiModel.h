@@ -7,15 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Location.h"
+#import <CoreLocation/CoreLocation.h>
 #import "WikiEntry.h"
 #import "SHXMLParser/SHXMLParser.h"
 
 @interface WikiModel : NSObject
 
-@property (nonatomic, readonly) NSMutableArray *wikiEntryArray;
+@property (strong, nonatomic) NSMutableArray *wikiEntryArray;
 
-- (void) searchWikipediaArticlesAroundLocation: (CLLocation *) newLocation
-               withSearchRadius: (NSInteger) radius;
+- (void) searchWikipediaArticlesAroundLocation:(CLLocation *) newLocation
+                              withSearchRadius:(NSInteger) radius;
 
 @end
