@@ -17,14 +17,18 @@
   //generate URL from location
   NSString *wikiURL = [NSString stringWithFormat:@"http://en.wikipedia.org/w/api.php?action=query"
                        @"&list=geosearch"
+                       @"&format=xml"
                        @"&gslimit=50"     // TODO: Magic number remove!
                        @"&gsmaxdim=3000"  // TODO: Magic number remove!
                        @"&gsradius=%ld"
                        @"&gscoord=%g|%g",
-                       radius, newLocation.coordinate.latitude, newLocation.coordinate.longitude];
+                       (long)radius, newLocation.coordinate.latitude,
+                                     newLocation.coordinate.longitude];
     
   //this code somehow makes the url palateable to WikiPedia
   NSString *url = [wikiURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+  
+  NSLog(@"Calling Wikipedia with URL: %@", url);
   
   //configure the session
   NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -43,7 +47,7 @@
         
         //now for our fabulous parser
         //this parses into an array of NSDictionary objects
-        SHXMLParser *parser = [[SHXMLParser alloc] init];
+        SHXMLParser     *parser         = [[SHXMLParser alloc] init];
         NSDictionary    *resultObject   = [parser parseData: data];
         NSArray         *dataArray      = [SHXMLParser getDataAtPath:@"api.query.geosearch.gs"
                                                     fromResultObject:resultObject];
@@ -59,25 +63,24 @@
                                            toObjectArrayWithClassName: @"WikiEntry"
                                                        classVariables:classVariables];
         
-        //finally, this is the array to be sent to the notification center
-        self.wikiEntryArray = [NSMutableArray arrayWithArray:converterArray];
+        _wikiEntryArray = [NSArray arrayWithArray:converterArray];
         
-        /*
+        
          //uncomment this block to check if the array was successfully created
          //it will log through every entry in the array if creation was
          //successful
          NSLog(@"\nTest Array: \n\n");
          for (WikiEntry *test in _wikiEntryArray) {
-         NSLog(@"Title: %@", test.title);
-         NSLog(@"pageid: %@", test.pageid);
-         NSLog(@"lat: %f", test.lat);
-         NSLog(@"lon: %f", test.lon);
-         NSLog(@"dist: %d\n\n", test.dist);
+           NSLog(@"Title: %@", test.title);
+           NSLog(@"pageid: %@", test.pageid);
+           NSLog(@"lat: %f", test.lat);
+           NSLog(@"lon: %f", test.lon);
+           NSLog(@"dist: %ld\n\n", test.dist);
          }
-         */
+         
         
         //NSDictionary to pass array via NSNotificationCenter
-        NSDictionary *theArray = [NSDictionary dictionaryWithObjectsAndKeys:self.wikiEntryArray,
+        NSDictionary *theArray = [NSDictionary dictionaryWithObjectsAndKeys:_wikiEntryArray,
                                   @"wikiEntryArray", nil];
         
         [[NSNotificationCenter defaultCenter] postNotificationName:@"Array Complete"

@@ -7,9 +7,8 @@
 //
 
 #import "MapViewController.h"
-#import "Location.h"
+#import "WikiModel.h"
 #import "WikiEntry.h"
-#import "CallWikipedia.h"
 #import "Annotation.h"
 
 static const int    MAX_DISTANCE_IN_METERS_MOVE_FOR_UPDATE = 5000;
@@ -99,21 +98,24 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
   // Set lastPolledLocation to the one we are about to execute.
   _lastArticleUpdateLocation = currentLocation;
   
-  // Fetch article list from Wikipedia v1.0 -- OLD WAY - PLEASE STOP.
-  Location *location = [[Location alloc] initWithRadius:10000
-                  newLocation:CLLocationCoordinate2DMake(currentLocation.coordinate.latitude,
-                                                         currentLocation.coordinate.longitude)];
-  [CallWikipedia populateArray:location];
-  NSArray *articleList = [CallWikipedia getMainArray];
+  // Notify Model it needs to update the article array.
+  [_model searchWikipediaArticlesAroundLocation:currentLocation
+                               withSearchRadius:5000];
+}
+
+- (void)reloadData:(NSNotification *)notification
+{
+  NSLog(@"reloadData called");
   
-  // Fetch article list from Wikipedia v2.0 -- NOT WORKING ATM
-//  NSArray *articleList = [CallWikipedia searchWikipediaArticlesAroundLocation:currentLocation
-//                                                             withSearchRadius:10000];
+  NSArray *articleList = [[notification userInfo] objectForKey:@"wikiEntryArray"];
+  
   
   NSLog(@"%@", [NSString stringWithFormat:@"articleList holds %lu objects",
                 (unsigned long)[articleList count]]);
   
-  NSMutableArray *annotations = [[NSMutableArray alloc] init];
+  if(!_annotations) _annotations = [[NSMutableArray alloc] init];
+  
+  [_annotations removeAllObjects]; // Make sure array is empty
   
   for(WikiEntry *e in articleList) {
     Annotation *a = [Annotation alloc];
@@ -130,11 +132,13 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
                   @"pageID: %@ \n",
                   a.title, a.subtitle, a.coordinate.latitude, a.coordinate.longitude, a.pageID]);
     
-    [annotations addObject:a];
+    [_annotations addObject:a];
   }
   
-  [_mapView addAnnotations:annotations];
+  [_mapView addAnnotations:_annotations];
 }
+
+
 
 - (BOOL)shouldUpdateMapAtLocation:(CLLocation *) currentLocation
 {
@@ -152,8 +156,15 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
 {
   [super viewDidLoad];
   _mapView.delegate = self;
+  _model = [[WikiModel alloc] init];
   _lastArticleUpdateLocation = [[CLLocation alloc] initWithLatitude:0 longitude:0];
   _lastUpdateUserLocation    = [[CLLocation alloc] initWithLatitude:0 longitude:0];
+  
+  // Listen for WikiModel to release updates.
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(reloadData:)
+                                               name:@"Array Complete"
+                                             object:_model];
 }
 
 - (void)didReceiveMemoryWarning
