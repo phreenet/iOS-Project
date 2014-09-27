@@ -44,4 +44,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)back:(id)sender {
+  if ([_webView canGoBack] == YES){
+    [_webView goBack];
+  }
+  else {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"This web page cannot go back" delegate:nil cancelButtonTitle:@"okay" otherButtonTitles:nil, nil];
+    [alert show];
+  }
+}
+
+- (IBAction)forward:(id)sender {
+  if ([_webView canGoForward] == YES){
+    [_webView goForward];
+  }
+  else {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"This web page cannot go forward" delegate:nil cancelButtonTitle:@"okay" otherButtonTitles:nil, nil];
+    [alert show];
+  }
+}
 @end
