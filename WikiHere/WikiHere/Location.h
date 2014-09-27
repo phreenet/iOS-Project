@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Annotation.h"
+#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 
 @interface Location : NSObject {
     int radius;
