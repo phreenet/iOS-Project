@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Location.h"
 #import "WikiEntry.h"
+#import "SHXMLParser/SHXMLParser.h"
 
 @interface WikiModel : NSObject
 
