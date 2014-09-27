@@ -19,8 +19,8 @@
 @implementation WikiModel
 
 
-- (void) populateWikiEntryArray: (CLLocation *)newLocation
-              withSearchRadius: (int) radius
+- (void) searchWikipediaArticlesAroundLocation: (CLLocation *)newLocation
+              withSearchRadius: (NSInteger) radius
 {
     
     //generate URL from location
@@ -74,7 +74,13 @@
              }
              */
             
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"Array Complete" object:self.wikiEntryArray];
+            //NSDictionary to pass array via NSNotificationCenter
+            NSDictionary *theArray = [NSDictionary dictionaryWithObjectsAndKeys:self.wikiEntryArray, @"wikiEntryArray", nil];
+            
+            [[NSNotificationCenter defaultCenter]
+                postNotificationName:@"Array Complete"
+                object:self
+                userInfo:theArray];
         }
         else //if there was an error
         {
