@@ -94,7 +94,8 @@ static NSArray *mainArray;
                          toObjectArrayWithClassName: @"WikiEntry"
                                      classVariables:classVariables];
     
-    return dataArray;
+    return dataArray; // Using method like this will probably still block UI thread until
+                      // Notification Center is setup for pushing it.  UI VC will wait for return!
     
   } else {
     return nil;
