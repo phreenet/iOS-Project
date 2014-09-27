@@ -63,15 +63,14 @@
                                            toObjectArrayWithClassName: @"WikiEntry"
                                                        classVariables:classVariables];
         
-        //finally, this is the array to be sent to the notification center
-        NSArray *wikiEntryArray = [NSArray arrayWithArray:converterArray];
+        _wikiEntryArray = [NSArray arrayWithArray:converterArray];
         
         
          //uncomment this block to check if the array was successfully created
          //it will log through every entry in the array if creation was
          //successful
          NSLog(@"\nTest Array: \n\n");
-         for (WikiEntry *test in wikiEntryArray) {
+         for (WikiEntry *test in _wikiEntryArray) {
            NSLog(@"Title: %@", test.title);
            NSLog(@"pageid: %@", test.pageid);
            NSLog(@"lat: %f", test.lat);
@@ -81,7 +80,7 @@
          
         
         //NSDictionary to pass array via NSNotificationCenter
-        NSDictionary *theArray = [NSDictionary dictionaryWithObjectsAndKeys:wikiEntryArray,
+        NSDictionary *theArray = [NSDictionary dictionaryWithObjectsAndKeys:_wikiEntryArray,
                                   @"wikiEntryArray", nil];
         
         [[NSNotificationCenter defaultCenter] postNotificationName:@"Array Complete"

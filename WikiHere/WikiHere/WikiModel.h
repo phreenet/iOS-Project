@@ -13,6 +13,8 @@
 
 @interface WikiModel : NSObject
 
+@property (strong, nonatomic) NSArray *wikiEntryArray;
+
 - (void) searchWikipediaArticlesAroundLocation:(CLLocation *) newLocation
                               withSearchRadius:(NSInteger) radius;
 
