@@ -14,6 +14,8 @@
 #import "CallWikipedia.h"
 #import "Annotation.h"
 
+#define MAX_DISTANCE_IN_METERS_MOVE_FOR_UPDATE  5000;  // 5000 m move required to ping Wikipedia.
+
 @implementation MapViewController
 
 // TODO: Implement map drag update, update articles if moved more than X meters.
@@ -39,6 +41,14 @@
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
 {
+  // Get center location of currently displayed region
+  CLLocationCoordinate2D centerLocation = [mapView centerCoordinate];
+  
+  // Log for debug only
+  NSLog(@"New region center: %@", [NSString stringWithFormat:@"%f %f",
+                                   centerLocation.latitude, centerLocation.longitude]);
+  
+  // Compare since last location, should not ping Wikipedia unless we move over MAX_DIST...
   
   
   
@@ -116,6 +126,20 @@
   
   
   return annotationView;
+}
+
+- (void)updateDataSourceWithLocation:(CLLocation *) currentLocation
+{
+  
+}
+
+- (BOOL)shouldUpdateMapAtLocation:(CLLocation *) currentLocation
+{
+  // Check distance to see if we are more than MAX_DIST... from last polled location.
+  
+  CLLocationDistance distance = [currentLocation distanceFromLocation:_lastPolledLocation];
+  
+  return distance > MAX_DISTANCE_IN_METERS_MOVE_FOR_UPDATE;
 }
 
 - (void)viewDidLoad
