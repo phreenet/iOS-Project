@@ -11,17 +11,15 @@
 
 @implementation Location
 
-@synthesize radius, location;
-
 - (id) init {
-    radius = 0;
+    _radius = 0;
     return self;
 }
 
-- (id) initWithRadius:(int)newRadius newLocation:(MKUserLocation *)newLocation {
+- (id) initWithRadius:(int)newRadius newLocation:(CLLocationCoordinate2D)newLocation {
     self = [super init];
     if (self) {
-        self.radius = newRadius;
+        self.radius   = newRadius;
         self.location = newLocation;
     }
     return self;
@@ -29,7 +27,8 @@
 
 - (NSString *) generateURL {
     
-    NSString *wikiURL = [NSString stringWithFormat:@"https://en.wikipedia.org/w/api.php?action=query&list=geosearch&gsradius=%d&gscoord=%g|%g&format=xml",radius, location.coordinate.latitude, location.coordinate.longitude];
+    NSString *wikiURL = [NSString stringWithFormat:@"https://en.wikipedia.org/w/api.php?action=query&list=geosearch&gsradius=%d&gscoord=%g|%g&format=xml", _radius,
+                         _location.latitude, _location.longitude];
     
     NSString *url = [wikiURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
