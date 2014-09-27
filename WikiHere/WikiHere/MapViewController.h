@@ -14,7 +14,8 @@
 @interface MapViewController : UIViewController <MKMapViewDelegate>
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
-@property (strong, nonatomic) CLLocation *lastPolledLocation;
+@property (strong, nonatomic) CLLocation *lastArticleUpdateLocation;
+@property (strong, nonatomic) CLLocation *lastUpdateUserLocation;
 
 
 - (IBAction)moveToUserLocation:(id)sender;
