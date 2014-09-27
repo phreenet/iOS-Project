@@ -51,6 +51,10 @@ static NSArray *mainArray;
     
 }
 
+/*
+ * Currently a little buggy.  Do not use just yet.
+ * You have been warned! JS
+ */
 +(NSArray *) searchWikipediaArticlesAroundLocation:(CLLocation *)location
                                   withSearchRadius:(NSInteger)radius;
 {
@@ -64,6 +68,8 @@ static NSArray *mainArray;
                          @"&gsradius=%ld"
                          @"&gscoord=%g|%g",
                          radius, location.coordinate.latitude, location.coordinate.longitude];
+  
+  NSLog(@"Current URL request starting: %@", url);
   
   NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
   NSOperationQueue  *queue = [[NSOperationQueue alloc] init];
