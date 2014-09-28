@@ -20,25 +20,22 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3Y-Zz-clN">
-                                <rect key="frame" x="255" y="459" width="45" height="45"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gto-fK-cx4">
+                                <rect key="frame" x="255" y="414" width="45" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="LocationArrow">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="moveToUserLocation:" destination="Z1f-sj-xlR" eventType="touchUpInside" id="JKL-QJ-wms"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="uTi-ov-XTV" firstAttribute="top" secondItem="N3Y-Zz-clN" secondAttribute="bottom" constant="15" id="7ND-GS-j3v"/>
+                            <constraint firstItem="uTi-ov-XTV" firstAttribute="bottom" secondItem="Gto-fK-cx4" secondAttribute="bottom" constant="60" id="JdX-6T-Atm"/>
                             <constraint firstAttribute="bottom" secondItem="fF1-dK-QEJ" secondAttribute="bottom" id="bit-gS-Fby"/>
                             <constraint firstAttribute="trailing" secondItem="fF1-dK-QEJ" secondAttribute="trailing" id="c6f-KA-VLW"/>
                             <constraint firstItem="fF1-dK-QEJ" firstAttribute="top" secondItem="bS7-Vv-qeO" secondAttribute="top" id="eGY-gO-COT"/>
                             <constraint firstItem="fF1-dK-QEJ" firstAttribute="leading" secondItem="bS7-Vv-qeO" secondAttribute="leading" id="oL8-Gr-bAK"/>
-                            <constraint firstAttribute="trailing" secondItem="N3Y-Zz-clN" secondAttribute="trailing" constant="20" symbolic="YES" id="z9A-ob-2jH"/>
+                            <constraint firstAttribute="trailing" secondItem="Gto-fK-cx4" secondAttribute="trailing" constant="20" symbolic="YES" id="qD5-M1-qcl"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="WUJ-N8-RsR"/>
