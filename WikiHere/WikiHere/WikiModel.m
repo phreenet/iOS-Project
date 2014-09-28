@@ -65,18 +65,16 @@
         _wikiEntryArray = [NSArray arrayWithArray:converterArray];
         
         
-         //uncomment this block to check if the array was successfully created
-         //it will log through every entry in the array if creation was
-         //successful
-         NSLog(@"\nTest Array: \n\n");
-         for (WikiEntry *test in _wikiEntryArray) {
-           NSLog(@"Title: %@", test.title);
-           NSLog(@"pageid: %@", test.pageid);
-           NSLog(@"lat: %f", test.lat);
-           NSLog(@"lon: %f", test.lon);
-           NSLog(@"dist: %ld\n\n", test.dist);
-         }
-         
+           // Logging-Debugging
+//         NSLog(@"\nTest Array: \n\n");
+//         for (WikiEntry *test in _wikiEntryArray) {
+//           NSLog(@"Title: %@", test.title);
+//           NSLog(@"pageid: %@", test.pageid);
+//           NSLog(@"lat: %f", test.lat);
+//           NSLog(@"lon: %f", test.lon);
+//           NSLog(@"dist: %ld\n\n", (long)test.dist);
+//         }
+        
         
         //NSDictionary to pass array via NSNotificationCenter
         NSDictionary *theArray = [NSDictionary dictionaryWithObjectsAndKeys:_wikiEntryArray,

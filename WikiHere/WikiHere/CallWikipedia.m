@@ -65,7 +65,7 @@ static NSArray *mainArray;
                          @"&gsmaxdim=3000"  // TODO: Magic number remove!
                          @"&gsradius=%ld"
                          @"&gscoord=%g|%g",
-                         radius, location.coordinate.latitude, location.coordinate.longitude]
+                         (long)radius, location.coordinate.latitude, location.coordinate.longitude]
                       stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
   
   NSLog(@"Current URL request starting: %@", url);

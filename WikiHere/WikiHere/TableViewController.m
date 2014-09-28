@@ -52,7 +52,7 @@
   cell.textLabel.text = [[self.wikiEntries objectAtIndex:indexPath.row] title];
   
   cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld meters",
-                               [[self.wikiEntries objectAtIndex:indexPath.row] dist]];
+                               (long)[[self.wikiEntries objectAtIndex:indexPath.row] dist]];
   return cell;
 }
 
