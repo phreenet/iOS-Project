@@ -38,17 +38,15 @@ static NSArray *mainArray;
     
     
     
-    NSLog(@"\nTest Array: \n\n");
-    
-     //this just logs through the array to ensure it's built properly
-    for (WikiEntry *test in mainArray) {
-        NSLog(@"Title: %@", test.title);
-        NSLog(@"pageid: %@", test.pageid);
-        NSLog(@"lat: %f", test.lat);
-        NSLog(@"lon: %f", test.lon);
-        NSLog(@"dist: %d\n\n", test.dist);
-    }
-    
+//    NSLog(@"\nTest Array: \n\n");
+//    for (WikiEntry *test in mainArray) {
+//        NSLog(@"Title: %@", test.title);
+//        NSLog(@"pageid: %@", test.pageid);
+//        NSLog(@"lat: %f", test.lat);
+//        NSLog(@"lon: %f", test.lon);
+//        NSLog(@"dist: %d\n\n", test.dist);
+//    }
+  
 }
 
 /*
