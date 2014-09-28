@@ -127,7 +127,7 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
     Annotation *a = [Annotation alloc];
     a.coordinate = CLLocationCoordinate2DMake(e.lat, e.lon);
     a.title = e.title;
-    a.subtitle = [NSString stringWithFormat:@"%ld m",(long)e.dist];
+    a.subtitle = [NSString stringWithFormat:@"%ld meters",(long)e.dist];
     a.pageID = e.pageid;
     
     

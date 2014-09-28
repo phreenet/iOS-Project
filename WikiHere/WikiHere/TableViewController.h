@@ -13,10 +13,7 @@
 @interface TableViewController : UITableViewController 
 
 @property (strong, nonatomic) UITableView *tableView;
-
 @property (strong, nonatomic) WebViewController *webViewController;
-
-@property (nonatomic, retain) NSArray *wikiEntries;
-
+@property (strong, nonatomic) NSArray *wikiEntries;
 
 @end

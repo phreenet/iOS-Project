@@ -8,8 +8,6 @@
 
 #import "TableViewController.h"
 #import "WebViewController.h"
-#import "CallWikipedia.h"
-#import "Location.h"
 #import "WikiEntry.h"
 #import "AppDelegate.h"
 
@@ -37,12 +35,6 @@
 }
 
 
-- (void)didReceiveMemoryWarning
-{
-  [super didReceiveMemoryWarning];
-  // Dispose of any resources that can be recreated.
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
   return [self.wikiEntries count];
@@ -50,15 +42,17 @@
 
 
 // Sets values for Wikipedia Entry
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ArticleEntryCell"];
   
   
   // Configure the cell...THIS IS IMPORTANT to set text!!
   cell.textLabel.text = [[self.wikiEntries objectAtIndex:indexPath.row] title];
-  cell.detailTextLabel.text = [[self.wikiEntries objectAtIndex:indexPath.row] pageid];
   
+  cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld meters",
+                               [[self.wikiEntries objectAtIndex:indexPath.row] dist]];
   return cell;
 }
 
@@ -67,7 +61,6 @@
 {
   [self performSegueWithIdentifier:@"showWikipediaArticle" sender:nil];
 }
-
 
 // This method is called right before the web view is instantiated -DS
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -87,6 +80,12 @@
     _webViewController.pageID = [[self.wikiEntries objectAtIndex:row] pageid];
     
   }
+}
+
+- (void)didReceiveMemoryWarning
+{
+  [super didReceiveMemoryWarning];
+  // Dispose of any resources that can be recreated.
 }
 
 @end
