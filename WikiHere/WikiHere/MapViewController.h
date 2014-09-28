@@ -16,7 +16,7 @@
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) WikiModel  *model;
-@property (strong, nonatomic) NSMutableArray *annotations;  // TODO: Check to see if we can make this non-mutable
+@property (strong, nonatomic) NSMutableArray *annotations;
 @property (strong, nonatomic) CLLocation *lastArticleUpdateLocation;
 @property (strong, nonatomic) CLLocation *lastUpdateUserLocation;
 
