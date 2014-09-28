@@ -12,7 +12,9 @@
 
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
 @property (strong, nonatomic) IBOutlet UIToolbar *toolBar;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *backButtonView;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *forwardButtonView;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *flexBar;
 
 @property (nonatomic) NSString *pageID;
 @property (strong, nonatomic) NSString *urlString;

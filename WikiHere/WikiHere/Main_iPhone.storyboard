@@ -149,6 +149,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Wikipedia" id="RQI-xg-375"/>
                     <connections>
+                        <outlet property="backButtonView" destination="FJh-i2-FQZ" id="xcu-jd-buP"/>
+                        <outlet property="flexBar" destination="gF5-0w-kLH" id="Hm0-Bd-Lb0"/>
                         <outlet property="forwardButtonView" destination="wmv-rx-OZ8" id="Eat-vL-THd"/>
                         <outlet property="toolBar" destination="MAx-eo-rNO" id="Unm-hn-7wK"/>
                         <outlet property="webView" destination="OY1-Z0-dOX" id="kGF-Ep-vTx"/>

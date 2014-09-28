@@ -36,19 +36,22 @@
 
 - (void) webViewDidStartLoad:(UIWebView *)webView
 {
-  NSMutableArray *toolBarButtons = [[_toolBar items] mutableCopy];
+  NSMutableArray *toolBarButtons = [[NSMutableArray alloc] init];
   
   if ([_webView canGoBack]) {
-    [_toolBar setHidden:NO];
+    [toolBarButtons addObject:_backButtonView];
   }
   
   if ([_webView canGoForward]) {
+    [toolBarButtons addObject:_flexBar];
     [toolBarButtons addObject:_forwardButtonView];
-    [_toolBar setItems:toolBarButtons];
-  } else {
-    [toolBarButtons removeObject:_forwardButtonView];
-    [_toolBar setItems:toolBarButtons];
   }
+  
+  if ([toolBarButtons count]) {
+    [_toolBar setItems:toolBarButtons];
+    [_toolBar setHidden:NO];
+  }
+  
 }
 
 
