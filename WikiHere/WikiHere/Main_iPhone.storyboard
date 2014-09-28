@@ -33,12 +33,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Kgz-Rp-EBR" secondAttribute="trailing" constant="20" symbolic="YES" id="Q83-Pm-Mmz"/>
+                            <constraint firstAttribute="trailing" secondItem="Kgz-Rp-EBR" secondAttribute="trailing" constant="20" symbolic="YES" id="Pjc-Jl-FOH"/>
                             <constraint firstAttribute="bottom" secondItem="fF1-dK-QEJ" secondAttribute="bottom" id="bit-gS-Fby"/>
                             <constraint firstAttribute="trailing" secondItem="fF1-dK-QEJ" secondAttribute="trailing" id="c6f-KA-VLW"/>
                             <constraint firstItem="fF1-dK-QEJ" firstAttribute="top" secondItem="bS7-Vv-qeO" secondAttribute="top" id="eGY-gO-COT"/>
+                            <constraint firstItem="uTi-ov-XTV" firstAttribute="top" secondItem="Kgz-Rp-EBR" secondAttribute="bottom" constant="11" id="feh-ut-Poq"/>
                             <constraint firstItem="fF1-dK-QEJ" firstAttribute="leading" secondItem="bS7-Vv-qeO" secondAttribute="leading" id="oL8-Gr-bAK"/>
-                            <constraint firstItem="uTi-ov-XTV" firstAttribute="top" secondItem="Kgz-Rp-EBR" secondAttribute="bottom" constant="11" id="uMm-ze-jqi"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="WUJ-N8-RsR"/>
