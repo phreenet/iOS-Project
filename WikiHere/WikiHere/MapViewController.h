@@ -10,6 +10,7 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "WikiModel.h"
+#import "Annotation.h"
 
 
 @interface MapViewController : UIViewController <MKMapViewDelegate>
@@ -19,6 +20,7 @@
 @property (strong, nonatomic) NSMutableArray *annotations;
 @property (strong, nonatomic) CLLocation *lastArticleUpdateLocation;
 @property (strong, nonatomic) CLLocation *lastUpdateUserLocation;
+@property (strong, nonatomic) Annotation *segueAnnotation;
 
 
 - (IBAction)moveToUserLocation:(id)sender;

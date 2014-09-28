@@ -7,6 +7,7 @@
 //
 
 #import "MapViewController.h"
+#import "WebViewController.h"
 #import "WikiModel.h"
 #import "WikiEntry.h"
 #import "Annotation.h"
@@ -90,19 +91,11 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
   
   annotationView.animatesDrop = YES;
   annotationView.canShowCallout = YES;
+  annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
   
   return annotationView;
 }
 
-- (void)updateDataSourceWithLocation:(CLLocation *) currentLocation
-{
-  // Set lastPolledLocation to the one we are about to execute.
-  _lastArticleUpdateLocation = currentLocation;
-  
-  // Notify Model it needs to update the article array.
-  [_model searchWikipediaArticlesAroundLocation:currentLocation
-                               withSearchRadius:5000];
-}
 
 - (void)reloadData:(NSNotification *)notification
 {
@@ -124,7 +117,7 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
   [_annotations removeAllObjects]; // Make sure array is empty
   
   for(WikiEntry *e in articleList) {
-    Annotation *a = [Annotation alloc];
+    Annotation *a = [[Annotation alloc] init];
     a.coordinate = CLLocationCoordinate2DMake(e.lat, e.lon);
     a.title = e.title;
     a.subtitle = [NSString stringWithFormat:@"%ld meters",(long)e.dist];
@@ -144,7 +137,31 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
   [_mapView addAnnotations:_annotations];
 }
 
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view
+                      calloutAccessoryControlTapped:(UIControl *)control
+{
+  _segueAnnotation = view.annotation;
+  [self performSegueWithIdentifier:@"showWebView" sender:view];
+}
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+  if ([[segue identifier] isEqualToString:@"showWebView"]) {
+    WebViewController *webViewController = [segue destinationViewController];
+    [webViewController setPageID:[_segueAnnotation pageID]];
+  }
+}
+
+
+- (void)updateDataSourceWithLocation:(CLLocation *) currentLocation
+{
+  // Set lastPolledLocation to the one we are about to execute.
+  _lastArticleUpdateLocation = currentLocation;
+  
+  // Notify Model it needs to update the article array.
+  [_model searchWikipediaArticlesAroundLocation:currentLocation
+                               withSearchRadius:5000];
+}
 
 - (BOOL)shouldUpdateMapAtLocation:(CLLocation *) currentLocation
 {
@@ -171,6 +188,12 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
                                            selector:@selector(reloadData:)
                                                name:@"Array Complete"
                                              object:_model];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+  // Hide Navigation Bar which is only useful for push segues.
+  [self.navigationController.navigationBar setHidden:YES];
 }
 
 - (void)didReceiveMemoryWarning

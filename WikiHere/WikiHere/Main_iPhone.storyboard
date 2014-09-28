@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Map View Controller - Map-->
+        <!--Map View Controller-->
         <scene sceneID="bXy-g4-twP">
             <objects>
                 <viewController id="Z1f-sj-xlR" customClass="MapViewController" sceneMemberID="viewController">
@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gto-fK-cx4">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gto-fK-cx4">
                                 <rect key="frame" x="255" y="414" width="45" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="LocationArrow">
@@ -41,14 +41,15 @@
                             <constraint firstAttribute="trailing" secondItem="Gto-fK-cx4" secondAttribute="trailing" constant="20" symbolic="YES" id="qD5-M1-qcl"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="WUJ-N8-RsR"/>
+                    <navigationItem key="navigationItem" id="2if-UJ-8KN"/>
                     <connections>
                         <outlet property="mapView" destination="fF1-dK-QEJ" id="002-qs-DYm"/>
+                        <segue destination="3Ca-fV-cm0" kind="push" identifier="showWebView" id="ruD-qt-URn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lcD-Bd-ddZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-42" y="180"/>
+            <point key="canvasLocation" x="431" y="180"/>
         </scene>
         <!--Table View Controller - Article List-->
         <scene sceneID="2Wi-fM-jff">
@@ -148,6 +149,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Wikipedia" id="RQI-xg-375"/>
                     <connections>
+                        <outlet property="backButtonView" destination="FJh-i2-FQZ" id="xcu-jd-buP"/>
+                        <outlet property="flexBar" destination="gF5-0w-kLH" id="Hm0-Bd-Lb0"/>
                         <outlet property="forwardButtonView" destination="wmv-rx-OZ8" id="Eat-vL-THd"/>
                         <outlet property="toolBar" destination="MAx-eo-rNO" id="Unm-hn-7wK"/>
                         <outlet property="webView" destination="OY1-Z0-dOX" id="kGF-Ep-vTx"/>
@@ -155,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6bd-1M-AcB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="879" y="855"/>
+            <point key="canvasLocation" x="1166" y="507"/>
         </scene>
         <!--Navigation Controller - List-->
         <scene sceneID="l0f-lD-5o8">
@@ -185,13 +188,36 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Z1f-sj-xlR" kind="relationship" relationship="viewControllers" id="HgA-Ep-Edb"/>
+                        <segue destination="iCt-bd-LgQ" kind="relationship" relationship="viewControllers" id="HgA-Ep-Edb"/>
                         <segue destination="ACK-g8-S83" kind="relationship" relationship="viewControllers" id="mm1-jC-lwO"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bv8-67-CxQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-576" y="507"/>
+        </scene>
+        <!--Navigation Controller - Map-->
+        <scene sceneID="8QH-gZ-tqg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iCt-bd-LgQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="WUJ-N8-RsR"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Oxo-Ci-8mH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="9ZN-L2-ZVe">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="Z1f-sj-xlR" kind="relationship" relationship="rootViewController" id="Its-8s-XGu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fzo-Oo-MLv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-42" y="180"/>
         </scene>
     </scenes>
     <resources>
@@ -204,4 +230,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="ruD-qt-URn"/>
+    </inferredMetricsTieBreakers>
 </document>
