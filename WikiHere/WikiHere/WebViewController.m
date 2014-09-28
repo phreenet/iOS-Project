@@ -8,59 +8,60 @@
 
 #import "WebViewController.h"
 
-@interface WebViewController ()
-
-@end
-
 @implementation WebViewController
-
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-  self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-  if (self) {
-        // Custom initialization
-  }
-  return self;
-}
 
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+  [self.tabBarController.tabBar setHidden:YES];
+  
+  [_toolBar setHidden:YES];
+  [_webView setDelegate:self];
   
   //  Set the url string
-  _urlString = [NSString stringWithFormat:@"%s=%@","http://www.wikipedia.org/wiki/?curid",_pageID];
+  _urlString = [NSString stringWithFormat:@"%@=%@",@"http://www.wikipedia.org/wiki/?curid",_pageID];
   
-    // Create a URL request
+  // Create a URL request
   NSURLRequest *requestObj = [NSURLRequest requestWithURL:[NSURL URLWithString:_urlString]];
+  
   // Tell the web view to show it
   [_webView loadRequest:requestObj];
 }
 
-
-- (void)didReceiveMemoryWarning
+- (void) viewWillDisappear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  [self.tabBarController.tabBar setHidden:NO];
 }
 
+- (void) webViewDidStartLoad:(UIWebView *)webView
+{
+  NSMutableArray *toolBarButtons = [[_toolBar items] mutableCopy];
+  
+  if ([_webView canGoBack]) {
+    [_toolBar setHidden:NO];
+  }
+  
+  if ([_webView canGoForward]) {
+    [toolBarButtons addObject:_forwardButtonView];
+    [_toolBar setItems:toolBarButtons];
+  } else {
+    [toolBarButtons removeObject:_forwardButtonView];
+    [_toolBar setItems:toolBarButtons];
+  }
+}
+
+
 - (IBAction)back:(id)sender {
-  if ([_webView canGoBack] == YES){
-    [_webView goBack];
-  }
-  else {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"This web page cannot go back" delegate:nil cancelButtonTitle:@"okay" otherButtonTitles:nil, nil];
-    [alert show];
-  }
+  [_webView goBack];
 }
 
 - (IBAction)forward:(id)sender {
-  if ([_webView canGoForward] == YES){
-    [_webView goForward];
-  }
-  else {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"This web page cannot go forward" delegate:nil cancelButtonTitle:@"okay" otherButtonTitles:nil, nil];
-    [alert show];
-  }
+  [_webView goForward];
 }
+
+- (void)didReceiveMemoryWarning
+{
+  [super didReceiveMemoryWarning];
+}
+
 @end

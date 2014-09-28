@@ -8,15 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WebViewController : UIViewController
+@interface WebViewController : UIViewController <UIWebViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
+@property (strong, nonatomic) IBOutlet UIToolbar *toolBar;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *forwardButtonView;
 
 @property (nonatomic) NSString *pageID;
 @property (strong, nonatomic) NSString *urlString;
 
 - (IBAction)back:(id)sender;
-
 - (IBAction)forward:(id)sender;
+
 
 @end

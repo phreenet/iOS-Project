@@ -118,7 +118,7 @@
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                             </webView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MAx-eo-rNO">
-                                <rect key="frame" x="0.0" y="478" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem systemItem="rewind" id="FJh-i2-FQZ">
@@ -137,17 +137,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="OY1-Z0-dOX" firstAttribute="top" secondItem="w0O-Ch-tMa" secondAttribute="top" id="36z-RC-mxB"/>
-                            <constraint firstItem="OY1-Z0-dOX" firstAttribute="trailing" secondItem="MAx-eo-rNO" secondAttribute="trailing" id="Mnz-ab-Yxf"/>
-                            <constraint firstItem="OY1-Z0-dOX" firstAttribute="leading" secondItem="MAx-eo-rNO" secondAttribute="leading" id="R4H-zi-yUb"/>
+                            <constraint firstItem="OY1-Z0-dOX" firstAttribute="leading" secondItem="w0O-Ch-tMa" secondAttribute="leading" id="52Z-av-tWU"/>
+                            <constraint firstItem="OY1-Z0-dOX" firstAttribute="top" secondItem="w0O-Ch-tMa" secondAttribute="top" id="5ay-kY-a6I"/>
+                            <constraint firstAttribute="bottom" secondItem="OY1-Z0-dOX" secondAttribute="bottom" id="NdA-Zq-Jyf"/>
                             <constraint firstAttribute="trailing" secondItem="OY1-Z0-dOX" secondAttribute="trailing" id="SjP-Zn-nXu"/>
-                            <constraint firstItem="MAx-eo-rNO" firstAttribute="leading" secondItem="w0O-Ch-tMa" secondAttribute="leading" id="hBe-G5-FQb"/>
-                            <constraint firstAttribute="bottom" secondItem="MAx-eo-rNO" secondAttribute="bottom" constant="46" id="kyf-Tk-hKB"/>
-                            <constraint firstAttribute="bottom" secondItem="OY1-Z0-dOX" secondAttribute="bottom" id="sgG-Q2-WQp"/>
+                            <constraint firstAttribute="bottom" secondItem="MAx-eo-rNO" secondAttribute="bottom" id="b44-Fl-8RB"/>
+                            <constraint firstAttribute="trailing" secondItem="MAx-eo-rNO" secondAttribute="trailing" id="iIi-og-ekk"/>
+                            <constraint firstItem="MAx-eo-rNO" firstAttribute="leading" secondItem="w0O-Ch-tMa" secondAttribute="leading" id="wYd-cu-G99"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Wikipedia" id="RQI-xg-375"/>
                     <connections>
+                        <outlet property="forwardButtonView" destination="wmv-rx-OZ8" id="Eat-vL-THd"/>
+                        <outlet property="toolBar" destination="MAx-eo-rNO" id="Unm-hn-7wK"/>
                         <outlet property="webView" destination="OY1-Z0-dOX" id="kGF-Ep-vTx"/>
                     </connections>
                 </viewController>
