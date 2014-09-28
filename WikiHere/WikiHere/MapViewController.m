@@ -190,6 +190,12 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
                                              object:_model];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+  // Hide Navigation Bar which is only useful for push segues.
+  [self.navigationController.navigationBar setHidden:YES];
+}
+
 - (void)didReceiveMemoryWarning
 {
   [super didReceiveMemoryWarning];

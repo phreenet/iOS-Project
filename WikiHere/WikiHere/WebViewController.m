@@ -14,6 +14,7 @@
 {
   [super viewDidLoad];
   [self.tabBarController.tabBar setHidden:YES];
+  [self.navigationController.navigationBar setHidden:NO];
   
   [_toolBar setHidden:YES];
   [_webView setDelegate:self];
