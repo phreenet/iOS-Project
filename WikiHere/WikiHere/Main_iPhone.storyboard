@@ -44,6 +44,7 @@
                     <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="WUJ-N8-RsR"/>
                     <connections>
                         <outlet property="mapView" destination="fF1-dK-QEJ" id="002-qs-DYm"/>
+                        <segue destination="3Ca-fV-cm0" kind="push" identifier="showWebView" id="ruD-qt-URn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lcD-Bd-ddZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -155,7 +156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6bd-1M-AcB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="879" y="855"/>
+            <point key="canvasLocation" x="965" y="180"/>
         </scene>
         <!--Navigation Controller - List-->
         <scene sceneID="l0f-lD-5o8">
@@ -204,4 +205,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="ruD-qt-URn"/>
+    </inferredMetricsTieBreakers>
 </document>
