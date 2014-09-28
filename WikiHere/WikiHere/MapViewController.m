@@ -31,7 +31,7 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
   if ([currentLocation distanceFromLocation:_lastUpdateUserLocation] >= 50) {
     _lastUpdateUserLocation = currentLocation;
     MKCoordinateRegion region =
-    MKCoordinateRegionMakeWithDistance(currentPoint, 10000, 10000);
+    MKCoordinateRegionMakeWithDistance(currentPoint, 5000, 5000);
     [_mapView setRegion:region animated:YES];
   }
 }
@@ -63,7 +63,7 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
   MKUserLocation *userLocation = [self.mapView userLocation];
   
   MKCoordinateRegion region =
-  MKCoordinateRegionMakeWithDistance(userLocation.location.coordinate, 10000, 10000);
+  MKCoordinateRegionMakeWithDistance(userLocation.location.coordinate, 5000, 5000);
   
   [_mapView setRegion:region animated:YES];
 }
@@ -182,6 +182,8 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
   _model = [[WikiModel alloc] init];
   _lastArticleUpdateLocation = [[CLLocation alloc] initWithLatitude:0 longitude:0];
   _lastUpdateUserLocation    = [[CLLocation alloc] initWithLatitude:0 longitude:0];
+  
+  _mapView.showsUserLocation = YES; // TODO: Need to fix this for iOS 8. 
   
   // Listen for WikiModel to release updates.
   [[NSNotificationCenter defaultCenter] addObserver:self
