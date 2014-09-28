@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2266FB3619CDF8EA008BA9BA /* CallWikipedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 2266FB3419CDF8EA008BA9BA /* CallWikipedia.m */; };
 		2286978819D71C7E001B2BA1 /* WikiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2286978719D71C7E001B2BA1 /* WikiModel.m */; };
-		4031C93C19CFA46A005B107C /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 4031C93B19CFA46A005B107C /* Location.m */; };
 		4031C93F19CFA48B005B107C /* WikiEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 4031C93E19CFA48B005B107C /* WikiEntry.m */; };
 		4044DDC219CE02170087B0A3 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4044DDBF19CE02170087B0A3 /* TableViewController.m */; };
 		4044DDC319CE02170087B0A3 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4044DDC119CE02170087B0A3 /* WebViewController.m */; };
@@ -48,12 +46,8 @@
 
 /* Begin PBXFileReference section */
 		10148D885B314962A690DA66 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		2266FB3419CDF8EA008BA9BA /* CallWikipedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallWikipedia.m; sourceTree = "<group>"; };
-		2266FB3519CDF8EA008BA9BA /* CallWikipedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallWikipedia.h; sourceTree = "<group>"; };
 		2286978619D71C7E001B2BA1 /* WikiModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiModel.h; sourceTree = "<group>"; };
 		2286978719D71C7E001B2BA1 /* WikiModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiModel.m; sourceTree = "<group>"; };
-		4031C93A19CFA46A005B107C /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
-		4031C93B19CFA46A005B107C /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		4031C93D19CFA48B005B107C /* WikiEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiEntry.h; sourceTree = "<group>"; };
 		4031C93E19CFA48B005B107C /* WikiEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiEntry.m; sourceTree = "<group>"; };
 		4044DDBE19CE02170087B0A3 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
@@ -140,10 +134,6 @@
 				40AFB20319D24F7F00E20F90 /* WikiArticle.m */,
 				4031C93D19CFA48B005B107C /* WikiEntry.h */,
 				4031C93E19CFA48B005B107C /* WikiEntry.m */,
-				2266FB3519CDF8EA008BA9BA /* CallWikipedia.h */,
-				2266FB3419CDF8EA008BA9BA /* CallWikipedia.m */,
-				4031C93A19CFA46A005B107C /* Location.h */,
-				4031C93B19CFA46A005B107C /* Location.m */,
 				2286978619D71C7E001B2BA1 /* WikiModel.h */,
 				2286978719D71C7E001B2BA1 /* WikiModel.m */,
 			);
@@ -376,8 +366,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				40D567D319BBB5BC00888D63 /* AppDelegate.m in Sources */,
-				2266FB3619CDF8EA008BA9BA /* CallWikipedia.m in Sources */,
-				4031C93C19CFA46A005B107C /* Location.m in Sources */,
 				40AFB20419D24F7F00E20F90 /* WikiArticle.m in Sources */,
 				4044DDC319CE02170087B0A3 /* WebViewController.m in Sources */,
 				40D567CF19BBB5BC00888D63 /* main.m in Sources */,

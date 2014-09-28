@@ -16,29 +16,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fF1-dK-QEJ">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fF1-dK-QEJ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0A-IN-xlq">
-                                <rect key="frame" x="20" y="456" width="45" height="45"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gto-fK-cx4">
+                                <rect key="frame" x="255" y="414" width="45" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="SettingsIcon">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kgz-Rp-EBR">
-                                <rect key="frame" x="255" y="456" width="45" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="NearMeIcon">
+                                <state key="normal" image="LocationArrow">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="moveToUserLocation:" destination="Z1f-sj-xlR" eventType="touchUpInside" id="1b3-bj-tdX"/>
+                                    <action selector="moveToUserLocation:" destination="Z1f-sj-xlR" eventType="touchUpInside" id="nra-BJ-qU9"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uTi-ov-XTV" firstAttribute="bottom" secondItem="Gto-fK-cx4" secondAttribute="bottom" constant="60" id="JdX-6T-Atm"/>
+                            <constraint firstAttribute="bottom" secondItem="fF1-dK-QEJ" secondAttribute="bottom" id="bit-gS-Fby"/>
+                            <constraint firstAttribute="trailing" secondItem="fF1-dK-QEJ" secondAttribute="trailing" id="c6f-KA-VLW"/>
+                            <constraint firstItem="fF1-dK-QEJ" firstAttribute="top" secondItem="bS7-Vv-qeO" secondAttribute="top" id="eGY-gO-COT"/>
+                            <constraint firstItem="fF1-dK-QEJ" firstAttribute="leading" secondItem="bS7-Vv-qeO" secondAttribute="leading" id="oL8-Gr-bAK"/>
+                            <constraint firstAttribute="trailing" secondItem="Gto-fK-cx4" secondAttribute="trailing" constant="20" symbolic="YES" id="qD5-M1-qcl"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="WUJ-N8-RsR"/>
                     <connections>
@@ -48,84 +49,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lcD-Bd-ddZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-42" y="180"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="tFS-Lu-mP0">
-            <objects>
-                <viewController id="5Tm-jK-cOa" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="6S9-3d-F7w"/>
-                        <viewControllerLayoutGuide type="bottom" id="RKl-nI-aLh"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="vvj-6U-cuz">
-                        <rect key="frame" x="0.0" y="0.0" width="200" height="250"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="1" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="gqO-dY-fhS">
-                                <rect key="frame" x="18" y="173" width="164" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="minimumTrackTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            </slider>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGg-Hj-ObO">
-                                <rect key="frame" x="79" y="209" width="39" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="m" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EpO-wh-L88">
-                                <rect key="frame" x="127" y="209" width="15" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search Radius" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSp-9e-6zc">
-                                <rect key="frame" x="44" y="144" width="112" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jump To Zip Code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lw-60-FUT">
-                                <rect key="frame" x="29" y="62" width="142" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zipcode" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yIM-TH-HhZ">
-                                <rect key="frame" x="29" y="91" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymM-dl-2gX">
-                                <rect key="frame" x="134" y="90" width="32" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="ExitAndGoIcon"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qZ-pj-1r0">
-                                <rect key="frame" x="157" y="8" width="32" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="CloseIcon">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <nil key="simulatedStatusBarMetrics"/>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="200" height="250"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vq3-7I-jKI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="557" y="283"/>
         </scene>
         <!--Table View Controller - Article List-->
         <scene sceneID="2Wi-fM-jff">
@@ -188,14 +111,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OY1-Z0-dOX">
-                                <rect key="frame" x="0.0" y="64" width="320" height="419"/>
+                            <webView multipleTouchEnabled="YES" contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OY1-Z0-dOX">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                             </webView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MAx-eo-rNO">
-                                <rect key="frame" x="0.0" y="477" width="320" height="44"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MAx-eo-rNO">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem systemItem="rewind" id="FJh-i2-FQZ">
@@ -213,9 +136,20 @@
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OY1-Z0-dOX" firstAttribute="leading" secondItem="w0O-Ch-tMa" secondAttribute="leading" id="52Z-av-tWU"/>
+                            <constraint firstItem="OY1-Z0-dOX" firstAttribute="top" secondItem="w0O-Ch-tMa" secondAttribute="top" id="5ay-kY-a6I"/>
+                            <constraint firstAttribute="bottom" secondItem="OY1-Z0-dOX" secondAttribute="bottom" id="NdA-Zq-Jyf"/>
+                            <constraint firstAttribute="trailing" secondItem="OY1-Z0-dOX" secondAttribute="trailing" id="SjP-Zn-nXu"/>
+                            <constraint firstAttribute="bottom" secondItem="MAx-eo-rNO" secondAttribute="bottom" id="b44-Fl-8RB"/>
+                            <constraint firstAttribute="trailing" secondItem="MAx-eo-rNO" secondAttribute="trailing" id="iIi-og-ekk"/>
+                            <constraint firstItem="MAx-eo-rNO" firstAttribute="leading" secondItem="w0O-Ch-tMa" secondAttribute="leading" id="wYd-cu-G99"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Wikipedia" id="RQI-xg-375"/>
                     <connections>
+                        <outlet property="forwardButtonView" destination="wmv-rx-OZ8" id="Eat-vL-THd"/>
+                        <outlet property="toolBar" destination="MAx-eo-rNO" id="Unm-hn-7wK"/>
                         <outlet property="webView" destination="OY1-Z0-dOX" id="kGF-Ep-vTx"/>
                     </connections>
                 </viewController>
@@ -261,12 +195,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CloseIcon" width="32" height="32"/>
-        <image name="ExitAndGoIcon" width="32" height="32"/>
         <image name="ListIcon" width="32" height="32"/>
+        <image name="LocationArrow" width="45" height="45"/>
         <image name="MapIcon" width="32" height="32"/>
-        <image name="NearMeIcon" width="50" height="50"/>
-        <image name="SettingsIcon" width="50" height="50"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
