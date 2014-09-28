@@ -8,46 +8,32 @@
 
 #import "TableViewController.h"
 #import "WebViewController.h"
-#import "CallWikipedia.h"
-#import "Location.h"
 #import "WikiEntry.h"
+#import "AppDelegate.h"
 
-
-@interface TableViewController() {
-  
-}
-
-@end
 
 @implementation TableViewController
-{
-  
-}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-  self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-  if (self) {
-    // Custom initialization
-  }
-  return self;
-}
 
 - (void)viewDidLoad
 {
   [super viewDidLoad];
   
+  // Listen for WikiModel to release updates.
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(updateDataSource:)
+                                               name:@"Array Complete"
+                                             object:nil];
   
-  
-  // Calls populateArray method and fills the wikiEntries array
-  _wikiEntries = [[NSMutableArray alloc] initWithArray:[CallWikipedia getMainArray]];
-};
-
-- (void)didReceiveMemoryWarning
-{
-  [super didReceiveMemoryWarning];
-  // Dispose of any resources that can be recreated.
+  AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+  _wikiEntries = [appDelegate tableViewStartingArray];
 }
+
+-(void)updateDataSource:(NSNotification *)notification
+{
+  _wikiEntries = [[notification userInfo] objectForKey:@"wikiEntryArray"];
+  [self.tableView reloadData];
+}
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -56,15 +42,17 @@
 
 
 // Sets values for Wikipedia Entry
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ArticleEntryCell"];
   
   
   // Configure the cell...THIS IS IMPORTANT to set text!!
   cell.textLabel.text = [[self.wikiEntries objectAtIndex:indexPath.row] title];
-  cell.detailTextLabel.text = [[self.wikiEntries objectAtIndex:indexPath.row] pageid];
   
+  cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld meters",
+                               [[self.wikiEntries objectAtIndex:indexPath.row] dist]];
   return cell;
 }
 
@@ -73,7 +61,6 @@
 {
   [self performSegueWithIdentifier:@"showWikipediaArticle" sender:nil];
 }
-
 
 // This method is called right before the web view is instantiated -DS
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -93,6 +80,12 @@
     _webViewController.pageID = [[self.wikiEntries objectAtIndex:row] pageid];
     
   }
+}
+
+- (void)didReceiveMemoryWarning
+{
+  [super didReceiveMemoryWarning];
+  // Dispose of any resources that can be recreated.
 }
 
 @end
