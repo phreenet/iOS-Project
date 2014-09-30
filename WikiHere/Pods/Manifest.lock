@@ -1,16 +1,13 @@
 PODS:
-  - JPSThumbnailAnnotation (1.0.0)
   - SHXMLParser (1.1.0)
   - WYPopoverController (0.2.2)
 
 DEPENDENCIES:
-  - JPSThumbnailAnnotation
   - SHXMLParser
-  - WYPopoverController (~> 0.2.2)
+  - WYPopoverController
 
 SPEC CHECKSUMS:
-  JPSThumbnailAnnotation: 3146c1cc9bdfb5e12888cf6c85d8d35940e66c0d
   SHXMLParser: 5879afe18ddf83cfa021d81963f8591765468ae3
   WYPopoverController: c233d69fdfd5c7e316b481df1060624d7a9e629d
 
-COCOAPODS: 0.33.1
+COCOAPODS: 0.34.1

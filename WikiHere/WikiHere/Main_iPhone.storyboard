@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tnn-9Z-DvU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tnn-9Z-DvU">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
         <!--Map View Controller-->
@@ -18,11 +19,9 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fF1-dK-QEJ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gto-fK-cx4">
                                 <rect key="frame" x="255" y="414" width="45" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="LocationArrow">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -51,7 +50,7 @@
             </objects>
             <point key="canvasLocation" x="431" y="180"/>
         </scene>
-        <!--Table View Controller - Article List-->
+        <!--Article List-->
         <scene sceneID="2Wi-fM-jff">
             <objects>
                 <tableViewController id="J0n-rW-cdh" customClass="TableViewController" sceneMemberID="viewController">
@@ -100,7 +99,7 @@
             </objects>
             <point key="canvasLocation" x="431" y="855"/>
         </scene>
-        <!--Web View Controller - Wikipedia-->
+        <!--Wikipedia-->
         <scene sceneID="7uu-lF-aqu">
             <objects>
                 <viewController id="3Ca-fV-cm0" customClass="WebViewController" sceneMemberID="viewController">
@@ -114,13 +113,11 @@
                         <subviews>
                             <webView multipleTouchEnabled="YES" contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OY1-Z0-dOX">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                             </webView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MAx-eo-rNO">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem systemItem="rewind" id="FJh-i2-FQZ">
                                         <connections>
@@ -160,7 +157,7 @@
             </objects>
             <point key="canvasLocation" x="1166" y="507"/>
         </scene>
-        <!--Navigation Controller - List-->
+        <!--List-->
         <scene sceneID="l0f-lD-5o8">
             <objects>
                 <navigationController definesPresentationContext="YES" id="ACK-g8-S83" sceneMemberID="viewController">
@@ -196,7 +193,7 @@
             </objects>
             <point key="canvasLocation" x="-576" y="507"/>
         </scene>
-        <!--Navigation Controller - Map-->
+        <!--Map-->
         <scene sceneID="8QH-gZ-tqg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iCt-bd-LgQ" sceneMemberID="viewController">
