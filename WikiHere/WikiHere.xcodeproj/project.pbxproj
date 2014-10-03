@@ -12,7 +12,6 @@
 		4044DDC219CE02170087B0A3 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4044DDBF19CE02170087B0A3 /* TableViewController.m */; };
 		4044DDC319CE02170087B0A3 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4044DDC119CE02170087B0A3 /* WebViewController.m */; };
 		40AFB20419D24F7F00E20F90 /* WikiArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 40AFB20319D24F7F00E20F90 /* WikiArticle.m */; };
-		40B2453B19DB6D1B003B4E5D /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40B2453A19DB6D1B003B4E5D /* Main_iPad.storyboard */; };
 		40CFE6ED19BBC7750086F5E5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CFE6EC19BBC7750086F5E5 /* MapKit.framework */; };
 		40D567C119BBB5BC00888D63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D567C019BBB5BC00888D63 /* Foundation.framework */; };
 		40D567C319BBB5BC00888D63 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D567C219BBB5BC00888D63 /* CoreGraphics.framework */; };
@@ -57,7 +56,6 @@
 		4044DDC119CE02170087B0A3 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		40AFB20219D24F7F00E20F90 /* WikiArticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiArticle.h; sourceTree = "<group>"; };
 		40AFB20319D24F7F00E20F90 /* WikiArticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiArticle.m; sourceTree = "<group>"; };
-		40B2453A19DB6D1B003B4E5D /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		40CFE6EC19BBC7750086F5E5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		40D567BD19BBB5BC00888D63 /* WikiHere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WikiHere.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40D567C019BBB5BC00888D63 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -147,7 +145,6 @@
 			isa = PBXGroup;
 			children = (
 				40ED07D819C8F7D7001B83B6 /* Main_iPhone.storyboard */,
-				40B2453A19DB6D1B003B4E5D /* Main_iPad.storyboard */,
 				40D567D719BBB5BC00888D63 /* Images.xcassets */,
 			);
 			name = View;
@@ -325,7 +322,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				40D567CD19BBB5BC00888D63 /* InfoPlist.strings in Resources */,
-				40B2453B19DB6D1B003B4E5D /* Main_iPad.storyboard in Resources */,
 				40D567D819BBB5BC00888D63 /* Images.xcassets in Resources */,
 				40ED07D919C8F7D7001B83B6 /* Main_iPhone.storyboard in Resources */,
 			);

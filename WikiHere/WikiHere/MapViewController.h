@@ -23,7 +23,6 @@
 @property (strong, nonatomic) Annotation *segueAnnotation;
 
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
-@property (strong, nonatomic) IBOutlet MKMapView *padMapView;
 
 
 - (IBAction)moveToUserLocation:(id)sender;

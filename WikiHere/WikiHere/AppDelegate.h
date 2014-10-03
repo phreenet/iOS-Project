@@ -17,6 +17,7 @@
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 @property (strong, nonatomic) NSArray *tableViewStartingArray;
+@property (strong, nonatomic) UISplitViewController *splitViewController;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;

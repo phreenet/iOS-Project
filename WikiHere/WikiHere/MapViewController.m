@@ -176,6 +176,7 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
 }
 
 #pragma mark - Split View Delegate
+
 // The next two methods will hide and show a button that displays the TableView
 - (void)splitViewController:(UISplitViewController *)svc
      willHideViewController:(UIViewController *)aViewController
@@ -220,6 +221,7 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
   // Hide Navigation Bar in iPhone version because we have the TabBar to move between
   // map and list views.
   if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+    NSLog(@"HERE");
     [self.navigationController.navigationBar setHidden:YES];
   }
 }

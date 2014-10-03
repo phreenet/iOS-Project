@@ -7,8 +7,8 @@
 //
 
 #import "AppDelegate.h"
-//#import "MapViewController.h"
-//#import "TableVIewController.h"
+#import "MapViewController.h"
+#import "TableViewController.h"
 
 @implementation AppDelegate
 
@@ -16,19 +16,38 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 @synthesize tableViewStartingArray;
+@synthesize splitViewController = _splitViewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  // Step 1 Check to see if we are on an iPad.
+  // Check to see if we are on an iPad.
   if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-    UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
-    UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
-    splitViewController.delegate = (id)navigationController.topViewController;
+
+    // Create a generic split view controller.
+    _splitViewController = [[UISplitViewController alloc] init];
     
-//    UINavigationController *masterNavigationController = splitViewController.viewControllers[0];
-//    TableViewController *controller = (TableViewController *)masterNavigationController.topViewController;
+    // Create both view controllers and make sure they are embedded in a Generic Navigation controller! A must!
+    TableViewController *articleList = [[UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil]
+                                        instantiateViewControllerWithIdentifier:@"ArticleList"];
+    
+    UINavigationController *master = [[UINavigationController alloc] initWithRootViewController:articleList];
+    
+    MapViewController *mapView = [[UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil]
+                                  instantiateViewControllerWithIdentifier:@"MapView"];
+    
+    UINavigationController *detail = [[UINavigationController alloc] initWithRootViewController:mapView];
+    
+    
+    // Set the MapViewController as the SplitViewController Delegate, it is always displayed so
+    // it controls if the button to show/hide the master navigation is shown based on screen orientation
+    [_splitViewController setDelegate:mapView];
+    
+    // Add views and their controllers to the split view hierarchy array and then set the
+    // app's root view controller as this new split view controller instead of the storyboards
+    // tab bar view controller
+    [_splitViewController setViewControllers:[NSArray arrayWithObjects:master, detail, nil]];
+    self.window.rootViewController = _splitViewController;
   }
-  
   return YES;
 }
 
