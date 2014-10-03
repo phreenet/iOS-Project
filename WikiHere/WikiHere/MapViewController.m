@@ -175,6 +175,30 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
   return distance > MAX_DISTANCE_IN_METERS_MOVE_FOR_UPDATE;
 }
 
+#pragma mark - Split View Delegate
+
+// The next two methods will hide and show a button that displays the TableView
+- (void)splitViewController:(UISplitViewController *)svc
+     willHideViewController:(UIViewController *)aViewController
+          withBarButtonItem:(UIBarButtonItem *)barButtonItem
+       forPopoverController:(UIPopoverController *)popoverController
+{
+  barButtonItem.title = @"Article List";
+  [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
+  self.masterPopoverController = popoverController;
+}
+
+- (void)splitViewController:(UISplitViewController *)svc
+     willShowViewController:(UIViewController *)aViewController
+  invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
+{
+  [self.navigationItem setLeftBarButtonItem:nil animated:YES];
+  self.masterPopoverController = nil;
+}
+
+
+#pragma mark - View Loading
+
 - (void)viewDidLoad
 {
   [super viewDidLoad];
@@ -194,8 +218,12 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
 
 - (void)viewWillAppear:(BOOL)animated
 {
-  // Hide Navigation Bar which is only useful for push segues.
-  [self.navigationController.navigationBar setHidden:YES];
+  // Hide Navigation Bar in iPhone version because we have the TabBar to move between
+  // map and list views.
+  if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+    NSLog(@"HERE");
+    [self.navigationController.navigationBar setHidden:YES];
+  }
 }
 
 - (void)didReceiveMemoryWarning
