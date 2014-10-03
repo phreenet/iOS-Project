@@ -11,16 +11,13 @@
 		4031C93F19CFA48B005B107C /* WikiEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 4031C93E19CFA48B005B107C /* WikiEntry.m */; };
 		4044DDC219CE02170087B0A3 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4044DDBF19CE02170087B0A3 /* TableViewController.m */; };
 		4044DDC319CE02170087B0A3 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4044DDC119CE02170087B0A3 /* WebViewController.m */; };
-		40AFB20419D24F7F00E20F90 /* WikiArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 40AFB20319D24F7F00E20F90 /* WikiArticle.m */; };
 		40CFE6ED19BBC7750086F5E5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CFE6EC19BBC7750086F5E5 /* MapKit.framework */; };
 		40D567C119BBB5BC00888D63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D567C019BBB5BC00888D63 /* Foundation.framework */; };
 		40D567C319BBB5BC00888D63 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D567C219BBB5BC00888D63 /* CoreGraphics.framework */; };
 		40D567C519BBB5BC00888D63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D567C419BBB5BC00888D63 /* UIKit.framework */; };
-		40D567C719BBB5BC00888D63 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D567C619BBB5BC00888D63 /* CoreData.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		40D567CD19BBB5BC00888D63 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 40D567CB19BBB5BC00888D63 /* InfoPlist.strings */; };
 		40D567CF19BBB5BC00888D63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D567CE19BBB5BC00888D63 /* main.m */; };
 		40D567D319BBB5BC00888D63 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D567D219BBB5BC00888D63 /* AppDelegate.m */; };
-		40D567D619BBB5BC00888D63 /* WikiHere.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40D567D419BBB5BC00888D63 /* WikiHere.xcdatamodeld */; };
 		40D567D819BBB5BC00888D63 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40D567D719BBB5BC00888D63 /* Images.xcassets */; };
 		40D567DF19BBB5BC00888D63 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D567DE19BBB5BC00888D63 /* XCTest.framework */; };
 		40D567E019BBB5BC00888D63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D567C019BBB5BC00888D63 /* Foundation.framework */; };
@@ -54,8 +51,6 @@
 		4044DDBF19CE02170087B0A3 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		4044DDC019CE02170087B0A3 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		4044DDC119CE02170087B0A3 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
-		40AFB20219D24F7F00E20F90 /* WikiArticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiArticle.h; sourceTree = "<group>"; };
-		40AFB20319D24F7F00E20F90 /* WikiArticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiArticle.m; sourceTree = "<group>"; };
 		40CFE6EC19BBC7750086F5E5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		40D567BD19BBB5BC00888D63 /* WikiHere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WikiHere.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40D567C019BBB5BC00888D63 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -68,7 +63,6 @@
 		40D567D019BBB5BC00888D63 /* WikiHere-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WikiHere-Prefix.pch"; sourceTree = "<group>"; };
 		40D567D119BBB5BC00888D63 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		40D567D219BBB5BC00888D63 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		40D567D519BBB5BC00888D63 /* WikiHere.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WikiHere.xcdatamodel; sourceTree = "<group>"; };
 		40D567D719BBB5BC00888D63 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		40D567DD19BBB5BC00888D63 /* WikiHereTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WikiHereTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40D567DE19BBB5BC00888D63 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -90,7 +84,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				40D567C319BBB5BC00888D63 /* CoreGraphics.framework in Frameworks */,
-				40D567C719BBB5BC00888D63 /* CoreData.framework in Frameworks */,
 				40CFE6ED19BBC7750086F5E5 /* MapKit.framework in Frameworks */,
 				40D567C519BBB5BC00888D63 /* UIKit.framework in Frameworks */,
 				40D567C119BBB5BC00888D63 /* Foundation.framework in Frameworks */,
@@ -130,9 +123,6 @@
 		4031C94119CFA54D005B107C /* Model  */ = {
 			isa = PBXGroup;
 			children = (
-				40D567D419BBB5BC00888D63 /* WikiHere.xcdatamodeld */,
-				40AFB20219D24F7F00E20F90 /* WikiArticle.h */,
-				40AFB20319D24F7F00E20F90 /* WikiArticle.m */,
 				4031C93D19CFA48B005B107C /* WikiEntry.h */,
 				4031C93E19CFA48B005B107C /* WikiEntry.m */,
 				2286978619D71C7E001B2BA1 /* WikiModel.h */,
@@ -376,12 +366,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				40D567D319BBB5BC00888D63 /* AppDelegate.m in Sources */,
-				40AFB20419D24F7F00E20F90 /* WikiArticle.m in Sources */,
 				4044DDC319CE02170087B0A3 /* WebViewController.m in Sources */,
 				40D567CF19BBB5BC00888D63 /* main.m in Sources */,
 				40F9BBF819CE7EBA00164C17 /* Annotation.m in Sources */,
 				2286978819D71C7E001B2BA1 /* WikiModel.m in Sources */,
-				40D567D619BBB5BC00888D63 /* WikiHere.xcdatamodeld in Sources */,
 				4031C93F19CFA48B005B107C /* WikiEntry.m in Sources */,
 				4044DDC219CE02170087B0A3 /* TableViewController.m in Sources */,
 				40DAC0A619CCFBF100F35465 /* MapViewController.m in Sources */,
@@ -603,19 +591,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		40D567D419BBB5BC00888D63 /* WikiHere.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				40D567D519BBB5BC00888D63 /* WikiHere.xcdatamodel */,
-			);
-			currentVersion = 40D567D519BBB5BC00888D63 /* WikiHere.xcdatamodel */;
-			path = WikiHere.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 40D567B519BBB5BC00888D63 /* Project object */;
 }
