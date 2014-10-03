@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "MapViewController.h"
+#import "TableVIewController.h"
 
 @implementation AppDelegate
 
@@ -17,7 +19,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    return YES;
+  // Step 1 Check to see if we are on an iPad.
+  if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+    UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
+    UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
+    splitViewController.delegate = (id)navigationController.topViewController;
+    
+//    UINavigationController *masterNavigationController = splitViewController.viewControllers[0];
+//    TableViewController *controller = (TableViewController *)masterNavigationController.topViewController;
+  }
+  
+  return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

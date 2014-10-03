@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="EjB-QQ-bPJ">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Map View Controller-->
+        <!--Map-->
         <scene sceneID="2jo-d4-nXV">
             <objects>
                 <viewController id="NfN-KC-S6E" customClass="MapViewController" sceneMemberID="viewController">
@@ -46,11 +45,11 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="jCP-zH-C6d"/>
+                    <navigationItem key="navigationItem" title="Map" id="jCP-zH-C6d"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QSu-j0-QLV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="363" y="341"/>
+            <point key="canvasLocation" x="972" y="340.5"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="7WO-La-hN4">
@@ -92,9 +91,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UN4-uT-hHq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1302.75" y="414"/>
+            <point key="canvasLocation" x="1911.75" y="414"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Wikipedia Article List-->
         <scene sceneID="l9D-Y3-m72">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="Xf3-Fj-Vu2" customClass="TableViewController" sceneMemberID="viewController">
@@ -132,7 +131,7 @@
                             <outlet property="delegate" destination="Xf3-Fj-Vu2" id="D8w-Vd-t1z"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="zpU-VP-yoD"/>
+                    <navigationItem key="navigationItem" title="Wikipedia Article List" id="zpU-VP-yoD"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g1Q-iw-o7H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -160,12 +159,30 @@
                 <splitViewController id="EjB-QQ-bPJ" sceneMemberID="viewController">
                     <connections>
                         <segue destination="yPO-xz-32E" kind="relationship" relationship="masterViewController" id="NV0-Ex-PrR"/>
-                        <segue destination="NfN-KC-S6E" kind="relationship" relationship="detailViewController" id="5Sf-un-lAg"/>
+                        <segue destination="hPs-H1-KCo" kind="relationship" relationship="detailViewController" id="5Sf-un-lAg"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jum-vR-5PK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-457" y="-9"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ECI-m6-I01">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hPs-H1-KCo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lqr-Nd-u9D">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NfN-KC-S6E" kind="relationship" relationship="rootViewController" id="hJn-Ry-rvb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BtC-pO-9cU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="363" y="340.5"/>
         </scene>
     </scenes>
 </document>
