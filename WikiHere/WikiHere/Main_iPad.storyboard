@@ -50,7 +50,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QSu-j0-QLV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="972" y="340.5"/>
+            <point key="canvasLocation" x="1023" y="340.5"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="7WO-La-hN4">
@@ -92,7 +92,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UN4-uT-hHq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1830.75" y="1.5"/>
+            <point key="canvasLocation" x="1863.75" y="-43.5"/>
         </scene>
         <!--Wikipedia Article List-->
         <scene sceneID="l9D-Y3-m72">
@@ -136,7 +136,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g1Q-iw-o7H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="931.5" y="-341.25"/>
+            <point key="canvasLocation" x="948" y="-341.25"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Bzr-0R-nQ9">

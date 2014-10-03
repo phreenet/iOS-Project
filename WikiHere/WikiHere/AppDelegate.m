@@ -7,8 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "MapViewController.h"
-#import "TableVIewController.h"
+//#import "MapViewController.h"
+//#import "TableVIewController.h"
 
 @implementation AppDelegate
 
