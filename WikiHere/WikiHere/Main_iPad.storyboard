@@ -47,6 +47,9 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="jCP-zH-C6d"/>
+                    <connections>
+                        <outlet property="padMapView" destination="2Tp-zh-u0W" id="2qQ-lL-2rr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QSu-j0-QLV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
