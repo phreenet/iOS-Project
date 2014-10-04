@@ -16,7 +16,15 @@
 static const int    MAX_DISTANCE_IN_METERS_MOVE_FOR_UPDATE = 5000;
 static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
 
+@interface MapViewController() {
+  BOOL updateGuard;
+}
+
+@end
+
 @implementation MapViewController
+
+#pragma mark - MapViewDelegate Methods
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
@@ -50,6 +58,8 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
   }
 }
 
+#pragma mark - User Interactions
+
 - (IBAction)moveToUserLocation:(id)sender
 {
   
@@ -62,6 +72,15 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
   [_mapView setRegion:region animated:YES];
 }
 
+- (void)showAnnotationCallout:(NSInteger)annotationIndex
+{
+  Annotation *selectedAnnotation = [_annotations objectAtIndex:annotationIndex];
+  [_mapView selectAnnotation:selectedAnnotation animated:YES];
+  MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([selectedAnnotation coordinate], 5000, 5000);
+  [_mapView setRegion:region animated:YES];
+}
+
+#pragma mark - Annotation Delegte
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
@@ -90,6 +109,37 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
   return annotationView;
 }
 
+#pragma mark - Data/Model Handling
+
+- (void)updateDataSourceWithLocation:(CLLocation *) currentLocation
+{
+  // Set lastPolledLocation to the one we are about to execute.
+  _lastArticleUpdateLocation = currentLocation;
+  
+  // Notify Model it needs to update the article array.
+  [_model searchWikipediaArticlesAroundLocation:currentLocation
+                               withSearchRadius:5000];
+}
+
+- (BOOL)shouldUpdateMapAtLocation:(CLLocation *) currentLocation
+{
+  // Check to see if updateGuard is set to YES
+  if (updateGuard) {
+    updateGuard = NO; // Clear updateGuard
+    return NO;
+  }
+  
+  // Check User Zoom Level by reading one of the region spans.
+  if (self.mapView.region.span.latitudeDelta > MAX_SPAN_IN_DEGREES_FOR_UPDATE) {
+    return NO;
+  }
+  
+  // Check distance to see if we are more than MAX_DIST... from last polled location.
+  CLLocationDistance distance = [currentLocation distanceFromLocation:_lastArticleUpdateLocation];
+  return distance > MAX_DISTANCE_IN_METERS_MOVE_FOR_UPDATE;
+}
+
+#pragma mark - Model Notification Selector
 
 - (void)reloadData:(NSNotification *)notification
 {
@@ -116,6 +166,8 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
   [_mapView addAnnotations:_annotations];
 }
 
+#pragma mark - Annotation Selection / Segue
+
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view
                       calloutAccessoryControlTapped:(UIControl *)control
 {
@@ -129,29 +181,6 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
     WebViewController *webViewController = [segue destinationViewController];
     [webViewController setPageID:[_segueAnnotation pageID]];
   }
-}
-
-
-- (void)updateDataSourceWithLocation:(CLLocation *) currentLocation
-{
-  // Set lastPolledLocation to the one we are about to execute.
-  _lastArticleUpdateLocation = currentLocation;
-  
-  // Notify Model it needs to update the article array.
-  [_model searchWikipediaArticlesAroundLocation:currentLocation
-                               withSearchRadius:5000];
-}
-
-- (BOOL)shouldUpdateMapAtLocation:(CLLocation *) currentLocation
-{
-  // Check User Zoom Level by reading one of the region spans. 
-  if (self.mapView.region.span.latitudeDelta > MAX_SPAN_IN_DEGREES_FOR_UPDATE) {
-    return NO;
-  }
-  
-  // Check distance to see if we are more than MAX_DIST... from last polled location.
-  CLLocationDistance distance = [currentLocation distanceFromLocation:_lastArticleUpdateLocation];
-  return distance > MAX_DISTANCE_IN_METERS_MOVE_FOR_UPDATE;
 }
 
 #pragma mark - Split View Delegate
@@ -182,6 +211,7 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
 {
   [super viewDidLoad];
   _mapView.delegate = self;
+  updateGuard = NO;
   _model = [[WikiModel alloc] init];
   _lastArticleUpdateLocation = [[CLLocation alloc] initWithLatitude:0 longitude:0];
   _lastUpdateUserLocation    = [[CLLocation alloc] initWithLatitude:0 longitude:0];

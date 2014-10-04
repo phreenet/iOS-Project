@@ -8,6 +8,7 @@
 
 #import "TableViewController.h"
 #import "WebViewController.h"
+#import "MapViewController.h"
 #import "WikiEntry.h"
 #import "AppDelegate.h"
 
@@ -64,7 +65,13 @@
   if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
     [self performSegueWithIdentifier:@"showWikipediaArticle" sender:nil];
   } else {
-    [self performSegueWithIdentifier:@"SplitViewSegue" sender:nil];
+    
+    // Highlight selected annotation callout in split view controller mode.
+    UINavigationController *detail = [self.splitViewController.viewControllers lastObject];
+    MapViewController *mapView = [[detail childViewControllers] firstObject];
+    [mapView showAnnotationCallout:[indexPath row]];
+    
+//    [self performSegueWithIdentifier:@"SplitViewSegue" sender:nil];
   }
   
 }
