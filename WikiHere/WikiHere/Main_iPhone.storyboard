@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tnn-9Z-DvU">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -93,6 +92,7 @@
                     <navigationItem key="navigationItem" title="Article List" id="z5H-EV-Oty"/>
                     <connections>
                         <segue destination="3Ca-fV-cm0" kind="push" identifier="showWikipediaArticle" id="Jtd-ko-FCr"/>
+                        <segue destination="3Ca-fV-cm0" kind="push" identifier="SplitViewSegue" splitViewControllerTargetIndex="1" id="6wR-gO-C1t"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rSc-XP-N5p" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -228,6 +228,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="ruD-qt-URn"/>
+        <segue reference="6wR-gO-C1t"/>
     </inferredMetricsTieBreakers>
 </document>
