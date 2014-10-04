@@ -43,15 +43,9 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
   
   CLLocation *centerLocation = [[CLLocation alloc] initWithLatitude:centerPoint.latitude
                                                           longitude:centerPoint.longitude];
-  
-  NSLog(@"New region center point: %@", [NSString stringWithFormat:@"%f %f",
-                                        centerPoint.latitude, centerPoint.longitude]);
-  
+
   // Checks to see if we should be updating after this move.
   if ([self shouldUpdateMapAtLocation:centerLocation]) {
-    NSLog(@"Updating Data Source After Region Change: %@", [NSString stringWithFormat:@"%f %f",
-                                                      centerPoint.latitude, centerPoint.longitude]);
-    
     [self updateDataSourceWithLocation:centerLocation];
   }
 }
@@ -99,17 +93,10 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
 
 - (void)reloadData:(NSNotification *)notification
 {
-  NSLog(@"reloadData called");
-  
   NSArray *articleList = [[notification userInfo] objectForKey:@"wikiEntryArray"];
   
-  // TODO: Is this really the best way to provide a starting data set to the TableViewController
   AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
   [appDelegate setTableViewStartingArray:articleList];
-  
-  
-  NSLog(@"%@", [NSString stringWithFormat:@"articleList holds %lu objects",
-                (unsigned long)[articleList count]]);
   
   if(!_annotations) _annotations = [[NSMutableArray alloc] init];
   
@@ -122,14 +109,6 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
     a.title = e.title;
     a.subtitle = [NSString stringWithFormat:@"%ld meters",(long)e.dist];
     a.pageID = e.pageid;
-    
-    
-    NSLog(@"%@", [NSString stringWithFormat:@"Current Annotation: %@ \n"
-                  @"Distance: %@ \n"
-                  @"Lattitude: %f \n"
-                  @"Longitude: %f \n"
-                  @"pageID: %@ \n",
-                  a.title, a.subtitle, a.coordinate.latitude, a.coordinate.longitude, a.pageID]);
     
     [_annotations addObject:a];
   }
@@ -221,7 +200,6 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
   // Hide Navigation Bar in iPhone version because we have the TabBar to move between
   // map and list views.
   if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-    NSLog(@"HERE");
     [self.navigationController.navigationBar setHidden:YES];
   }
 }
