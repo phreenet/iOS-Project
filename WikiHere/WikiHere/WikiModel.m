@@ -27,8 +27,6 @@
   //this code somehow makes the url palateable to WikiPedia
   NSString *url = [wikiURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
   
-  NSLog(@"Calling Wikipedia with URL: %@", url);
-  
   //configure the session
   NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
   
@@ -41,9 +39,6 @@
                       completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
     {
       if (!error) {
-        //log response for debugging
-        NSLog(@"Got response %@ with error %@\n", response, error);
-        
         //now for our fabulous parser
         //this parses into an array of NSDictionary objects
         SHXMLParser     *parser         = [[SHXMLParser alloc] init];
@@ -62,19 +57,7 @@
                                            toObjectArrayWithClassName: @"WikiEntry"
                                                        classVariables:classVariables];
         
-        _wikiEntryArray = [NSArray arrayWithArray:converterArray];
-        
-        
-           // Logging-Debugging
-//         NSLog(@"\nTest Array: \n\n");
-//         for (WikiEntry *test in _wikiEntryArray) {
-//           NSLog(@"Title: %@", test.title);
-//           NSLog(@"pageid: %@", test.pageid);
-//           NSLog(@"lat: %f", test.lat);
-//           NSLog(@"lon: %f", test.lon);
-//           NSLog(@"dist: %ld\n\n", (long)test.dist);
-//         }
-        
+        _wikiEntryArray = [NSArray arrayWithArray:converterArray];        
         
         //NSDictionary to pass array via NSNotificationCenter
         NSDictionary *theArray = [NSDictionary dictionaryWithObjectsAndKeys:_wikiEntryArray,
