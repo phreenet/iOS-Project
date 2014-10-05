@@ -93,6 +93,7 @@
                     <navigationItem key="navigationItem" title="Article List" id="z5H-EV-Oty"/>
                     <connections>
                         <segue destination="3Ca-fV-cm0" kind="push" identifier="showWikipediaArticle" id="Jtd-ko-FCr"/>
+                        <segue destination="3Ca-fV-cm0" kind="push" identifier="SplitViewSegue" splitViewControllerTargetIndex="1" id="6wR-gO-C1t"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rSc-XP-N5p" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -228,6 +229,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="ruD-qt-URn"/>
+        <segue reference="6wR-gO-C1t"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -8,6 +8,7 @@
 
 #import "TableViewController.h"
 #import "WebViewController.h"
+#import "MapViewController.h"
 #import "WikiEntry.h"
 #import "AppDelegate.h"
 
@@ -59,27 +60,41 @@
 //Perform the segue transition.
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  [self performSegueWithIdentifier:@"showWikipediaArticle" sender:nil];
+  // Determine if we are on a phone or tablet.  Phones will segue with full screen replace
+  // standard option and tablets segue with special replace detail option in storyboard.
+  if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+    [self performSegueWithIdentifier:@"showWikipediaArticle" sender:nil];
+  } else {
+    
+    // Highlight selected annotation callout in split view controller mode.
+    UINavigationController *detail = [self.splitViewController.viewControllers lastObject];
+    MapViewController *mapView = [[detail childViewControllers] firstObject];
+    [mapView showAnnotationCallout:[indexPath row]];
+    
+//    [self performSegueWithIdentifier:@"SplitViewSegue" sender:nil];
+  }
+  
 }
 
 // This method is called right before the web view is instantiated -DS
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
   
   // Here is where we pass the page ID to the Web View Controller.
-  if ([[segue identifier] isEqualToString:@"showWikipediaArticle"])
-  {
-    _webViewController =[segue destinationViewController];
-    
-    // Grab the row that was pressed
-    NSIndexPath *myIndexPath = [self.tableView
-                                indexPathForSelectedRow];
-    long row = [myIndexPath row];
-    
-    // Set webViewController's pageID based on the selected WikiEntry
-    _webViewController.pageID = [[self.wikiEntries objectAtIndex:row] pageid];
-    
+  if ([[segue identifier] isEqualToString:@"showWikipediaArticle"]) {
+    _webViewController = [segue destinationViewController];
+  } else if ([[segue identifier] isEqualToString:@"SplitViewSegue"]) {
+    _webViewController = [segue destinationViewController];
+  } else {
+    return;
   }
+  
+  // Grab the row that was pressed
+  NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
+  long row = [myIndexPath row];
+  
+  // Set webViewController's pageID based on the selected WikiEntry
+  _webViewController.pageID = [[self.wikiEntries objectAtIndex:row] pageid];
 }
 
 - (void)didReceiveMemoryWarning

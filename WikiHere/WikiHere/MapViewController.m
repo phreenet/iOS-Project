@@ -16,7 +16,15 @@
 static const int    MAX_DISTANCE_IN_METERS_MOVE_FOR_UPDATE = 5000;
 static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
 
+@interface MapViewController() {
+  BOOL updateGuard;
+}
+
+@end
+
 @implementation MapViewController
+
+#pragma mark - MapViewDelegate Methods
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
@@ -43,18 +51,14 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
   
   CLLocation *centerLocation = [[CLLocation alloc] initWithLatitude:centerPoint.latitude
                                                           longitude:centerPoint.longitude];
-  
-  NSLog(@"New region center point: %@", [NSString stringWithFormat:@"%f %f",
-                                        centerPoint.latitude, centerPoint.longitude]);
-  
+
   // Checks to see if we should be updating after this move.
   if ([self shouldUpdateMapAtLocation:centerLocation]) {
-    NSLog(@"Updating Data Source After Region Change: %@", [NSString stringWithFormat:@"%f %f",
-                                                      centerPoint.latitude, centerPoint.longitude]);
-    
     [self updateDataSourceWithLocation:centerLocation];
   }
 }
+
+#pragma mark - User Interactions
 
 - (IBAction)moveToUserLocation:(id)sender
 {
@@ -68,6 +72,15 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
   [_mapView setRegion:region animated:YES];
 }
 
+- (void)showAnnotationCallout:(NSInteger)annotationIndex
+{
+  Annotation *selectedAnnotation = [_annotations objectAtIndex:annotationIndex];
+  [_mapView selectAnnotation:selectedAnnotation animated:YES];
+  MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([selectedAnnotation coordinate], 5000, 5000);
+  [_mapView setRegion:region animated:YES];
+}
+
+#pragma mark - Annotation Delegte
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
@@ -96,20 +109,44 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
   return annotationView;
 }
 
+#pragma mark - Data/Model Handling
+
+- (void)updateDataSourceWithLocation:(CLLocation *) currentLocation
+{
+  // Set lastPolledLocation to the one we are about to execute.
+  _lastArticleUpdateLocation = currentLocation;
+  
+  // Notify Model it needs to update the article array.
+  [_model searchWikipediaArticlesAroundLocation:currentLocation
+                               withSearchRadius:5000];
+}
+
+- (BOOL)shouldUpdateMapAtLocation:(CLLocation *) currentLocation
+{
+  // Check to see if updateGuard is set to YES
+  if (updateGuard) {
+    updateGuard = NO; // Clear updateGuard
+    return NO;
+  }
+  
+  // Check User Zoom Level by reading one of the region spans.
+  if (self.mapView.region.span.latitudeDelta > MAX_SPAN_IN_DEGREES_FOR_UPDATE) {
+    return NO;
+  }
+  
+  // Check distance to see if we are more than MAX_DIST... from last polled location.
+  CLLocationDistance distance = [currentLocation distanceFromLocation:_lastArticleUpdateLocation];
+  return distance > MAX_DISTANCE_IN_METERS_MOVE_FOR_UPDATE;
+}
+
+#pragma mark - Model Notification Selector
 
 - (void)reloadData:(NSNotification *)notification
 {
-  NSLog(@"reloadData called");
-  
   NSArray *articleList = [[notification userInfo] objectForKey:@"wikiEntryArray"];
   
-  // TODO: Is this really the best way to provide a starting data set to the TableViewController
   AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
   [appDelegate setTableViewStartingArray:articleList];
-  
-  
-  NSLog(@"%@", [NSString stringWithFormat:@"articleList holds %lu objects",
-                (unsigned long)[articleList count]]);
   
   if(!_annotations) _annotations = [[NSMutableArray alloc] init];
   
@@ -123,19 +160,13 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
     a.subtitle = [NSString stringWithFormat:@"%ld meters",(long)e.dist];
     a.pageID = e.pageid;
     
-    
-    NSLog(@"%@", [NSString stringWithFormat:@"Current Annotation: %@ \n"
-                  @"Distance: %@ \n"
-                  @"Lattitude: %f \n"
-                  @"Longitude: %f \n"
-                  @"pageID: %@ \n",
-                  a.title, a.subtitle, a.coordinate.latitude, a.coordinate.longitude, a.pageID]);
-    
     [_annotations addObject:a];
   }
   
   [_mapView addAnnotations:_annotations];
 }
+
+#pragma mark - Annotation Selection / Segue
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view
                       calloutAccessoryControlTapped:(UIControl *)control
@@ -150,29 +181,6 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
     WebViewController *webViewController = [segue destinationViewController];
     [webViewController setPageID:[_segueAnnotation pageID]];
   }
-}
-
-
-- (void)updateDataSourceWithLocation:(CLLocation *) currentLocation
-{
-  // Set lastPolledLocation to the one we are about to execute.
-  _lastArticleUpdateLocation = currentLocation;
-  
-  // Notify Model it needs to update the article array.
-  [_model searchWikipediaArticlesAroundLocation:currentLocation
-                               withSearchRadius:5000];
-}
-
-- (BOOL)shouldUpdateMapAtLocation:(CLLocation *) currentLocation
-{
-  // Check User Zoom Level by reading one of the region spans. 
-  if (self.mapView.region.span.latitudeDelta > MAX_SPAN_IN_DEGREES_FOR_UPDATE) {
-    return NO;
-  }
-  
-  // Check distance to see if we are more than MAX_DIST... from last polled location.
-  CLLocationDistance distance = [currentLocation distanceFromLocation:_lastArticleUpdateLocation];
-  return distance > MAX_DISTANCE_IN_METERS_MOVE_FOR_UPDATE;
 }
 
 #pragma mark - Split View Delegate
@@ -203,6 +211,7 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
 {
   [super viewDidLoad];
   _mapView.delegate = self;
+  updateGuard = NO;
   _model = [[WikiModel alloc] init];
   _lastArticleUpdateLocation = [[CLLocation alloc] initWithLatitude:0 longitude:0];
   _lastUpdateUserLocation    = [[CLLocation alloc] initWithLatitude:0 longitude:0];
@@ -221,7 +230,6 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
   // Hide Navigation Bar in iPhone version because we have the TabBar to move between
   // map and list views.
   if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-    NSLog(@"HERE");
     [self.navigationController.navigationBar setHidden:YES];
   }
 }

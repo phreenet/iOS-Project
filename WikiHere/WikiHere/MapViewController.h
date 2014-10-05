@@ -27,4 +27,6 @@
 
 - (IBAction)moveToUserLocation:(id)sender;
 
+- (void)showAnnotationCallout:(NSInteger)annotationIndex;
+
 @end
