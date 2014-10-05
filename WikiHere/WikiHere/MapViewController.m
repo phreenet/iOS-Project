@@ -15,12 +15,12 @@
 
 #define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 
-
 static const int    MAX_DISTANCE_IN_METERS_MOVE_FOR_UPDATE = 5000;
 static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
 
 @interface MapViewController() {
-  BOOL updateGuard;
+  BOOL firstUpdate; // After first update tone down the accuracy and location change monitoring
+  BOOL updateGuard; // updateGuard prevents Wiki update when centering on annotation in MapView
 }
 
 @end
@@ -38,12 +38,19 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
                                                            longitude:currentPoint.longitude];
   
   
-  // If user has moved more than 50 meters recenter map.
-  if ([currentLocation distanceFromLocation:_lastUpdateUserLocation] >= 50) {
+  // If user has moved more than 500 meters recenter map.
+  if ([currentLocation distanceFromLocation:_lastUpdateUserLocation] >= 500) {
     _lastUpdateUserLocation = currentLocation;
     MKCoordinateRegion region =
     MKCoordinateRegionMakeWithDistance(currentPoint, 5000, 5000);
     [_mapView setRegion:region animated:YES];
+  }
+  
+  if (firstUpdate) {
+    // Set location manager properties for best battery performance.
+    [_locationManager stopMonitoringSignificantLocationChanges];
+    [_locationManager setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
+    firstUpdate = NO;
   }
 }
 
@@ -77,6 +84,7 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
 
 - (void)showAnnotationCallout:(NSInteger)annotationIndex
 {
+  // In a split view application the master (table) can call annotations to callout.
   Annotation *selectedAnnotation = [_annotations objectAtIndex:annotationIndex];
   [_mapView selectAnnotation:selectedAnnotation animated:YES];
   MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([selectedAnnotation coordinate], 5000, 5000);
@@ -89,7 +97,6 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
 {
   // Check to make sure we aren't creating an annotation for the userLocation, we want that
   // blue circle!
-  
   if([annotation isEqual:[mapView userLocation]]) {
     return nil;
   }
@@ -153,7 +160,7 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
   
   if(!_annotations) _annotations = [[NSMutableArray alloc] init];
   
-  [_mapView removeAnnotations:_annotations]; // Remove all existing pins. 
+  [_mapView removeAnnotations:_annotations]; // Remove all existing pins from map view.
   [_annotations removeAllObjects]; // Make sure array is empty
   
   for(WikiEntry *e in articleList) {
@@ -188,7 +195,8 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
 
 #pragma mark - Split View Delegate
 
-// The next two methods will hide and show a button that displays the TableView
+// The next two methods will hide and show a button that displays the TableView based on
+// screen orientation
 - (void)splitViewController:(UISplitViewController *)svc
      willHideViewController:(UIViewController *)aViewController
           withBarButtonItem:(UIBarButtonItem *)barButtonItem
@@ -210,28 +218,30 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
 
 #pragma mark - View Loading
 
+// Setup Map View Controller once when app is first lanuched.
 - (void)viewDidLoad
 {
   [super viewDidLoad];
   
+  updateGuard = NO;  // Update guard protects against updates when map is centered on annotation
+  firstUpdate = YES; // Will be checked at didUpdateUserLocation
+  
+  // Setup location manager services so device can use GPS.
+  
   _locationManager = [[CLLocationManager alloc] init];
-  if (IS_OS_8_OR_LATER) {
+  if (IS_OS_8_OR_LATER) {  // New iOS 8 location privacy request method.
     [_locationManager requestWhenInUseAuthorization];
   }
-  
-  // Set location manager properties for best battery performance.
-  [_locationManager stopMonitoringSignificantLocationChanges];
-  [_locationManager setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
+
   [_locationManager startUpdatingLocation];
-  
-  updateGuard = NO;  // Update guard protects against updates when map is centered on annotation
   
   _mapView.delegate = self;
   _model = [[WikiModel alloc] init];
   _lastArticleUpdateLocation = [[CLLocation alloc] initWithLatitude:0 longitude:0];
   _lastUpdateUserLocation    = [[CLLocation alloc] initWithLatitude:0 longitude:0];
   
-  // Listen for WikiModel to release updates.
+  // Add ViewController to notification center to listen for completed updates by model class.
+  // call method reloadData when notification is receieved.
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(reloadData:)
                                                name:@"Array Complete"

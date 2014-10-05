@@ -15,22 +15,22 @@
 {
   //generate URL from location
   NSString *wikiURL = [NSString stringWithFormat:@"http://en.wikipedia.org/w/api.php?action=query"
-                       @"&list=geosearch"
-                       @"&format=xml"
-                       @"&gslimit=50"     // TODO: Magic number remove!
-                       @"&gsmaxdim=3000"  // TODO: Magic number remove!
-                       @"&gsradius=%ld"
-                       @"&gscoord=%g|%g",
+                       @"&list=geosearch" // Asking Wikipedia to do a geosearch
+                       @"&format=xml"     // Make sure the format is XML
+                       @"&gslimit=50"     // Limit articles to return, hard set to 50
+                       @"&gsmaxdim=3000"  // Limit articles to Wikipedia geo dimension size, hard set to 3000
+                       @"&gsradius=%ld"   // Max search radius
+                       @"&gscoord=%g|%g", // Lat/Long to conduct search around
                        (long)radius, newLocation.coordinate.latitude,
                                      newLocation.coordinate.longitude];
     
-  //this code somehow makes the url palateable to WikiPedia
+  // Convert special characters to their escaped values
   NSString *url = [wikiURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
   
-  //configure the session
+  // Configur a URL Session
   NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
   
-  //create the delegate free session because we're using NSNotificationCenter
+  // Create a delegate free session because we're using NSNotificationCenter
   NSURLSession *delagateFreeSession = [NSURLSession sessionWithConfiguration:defaultConfigObject
                                                                     delegate:nil
                                                                delegateQueue:[NSOperationQueue mainQueue]];
