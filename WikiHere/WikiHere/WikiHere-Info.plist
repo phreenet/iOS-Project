@@ -43,6 +43,8 @@
 	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>Main_iPhone</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string></string>
 	<key>UIMainStoryboardFile~ipad</key>
 	<string>Main_iPhone</string>
 	<key>UIRequiredDeviceCapabilities</key>

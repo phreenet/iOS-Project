@@ -13,11 +13,14 @@
 #import "Annotation.h"
 
 
-@interface MapViewController : UIViewController <MKMapViewDelegate, UISplitViewControllerDelegate>
+@interface MapViewController : UIViewController <MKMapViewDelegate,
+                                                 UISplitViewControllerDelegate,
+                                                 CLLocationManagerDelegate>
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) WikiModel  *model;
 @property (strong, nonatomic) NSMutableArray *annotations;
+@property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) CLLocation *lastArticleUpdateLocation;
 @property (strong, nonatomic) CLLocation *lastUpdateUserLocation;
 @property (strong, nonatomic) Annotation *segueAnnotation;

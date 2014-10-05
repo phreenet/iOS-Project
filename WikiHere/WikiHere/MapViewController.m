@@ -13,6 +13,9 @@
 #import "Annotation.h"
 #import "AppDelegate.h"
 
+#define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+
+
 static const int    MAX_DISTANCE_IN_METERS_MOVE_FOR_UPDATE = 5000;
 static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
 
@@ -210,13 +213,23 @@ static const double MAX_SPAN_IN_DEGREES_FOR_UPDATE = 0.5;
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+  
+  _locationManager = [[CLLocationManager alloc] init];
+  if (IS_OS_8_OR_LATER) {
+    [_locationManager requestWhenInUseAuthorization];
+  }
+  
+  // Set location manager properties for best battery performance.
+  [_locationManager stopMonitoringSignificantLocationChanges];
+  [_locationManager setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
+  [_locationManager startUpdatingLocation];
+  
+  updateGuard = NO;  // Update guard protects against updates when map is centered on annotation
+  
   _mapView.delegate = self;
-  updateGuard = NO;
   _model = [[WikiModel alloc] init];
   _lastArticleUpdateLocation = [[CLLocation alloc] initWithLatitude:0 longitude:0];
   _lastUpdateUserLocation    = [[CLLocation alloc] initWithLatitude:0 longitude:0];
-  
-  _mapView.showsUserLocation = YES; // TODO: Need to fix this for iOS 8. 
   
   // Listen for WikiModel to release updates.
   [[NSNotificationCenter defaultCenter] addObserver:self
