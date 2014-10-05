@@ -17,7 +17,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  // Check to see if we are on an iPad.
+  // Check to see if we are on an iPad.  If we are build a Split View Controller out of the
+  // Storyboard Views.
   if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
 
     // Create a generic split view controller.
@@ -45,6 +46,7 @@
     [_splitViewController setViewControllers:[NSArray arrayWithObjects:master, detail, nil]];
     self.window.rootViewController = _splitViewController;
   }
+  
   return YES;
 }
 
