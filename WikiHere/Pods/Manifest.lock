@@ -1,13 +1,10 @@
 PODS:
   - SHXMLParser (1.1.0)
-  - WYPopoverController (0.2.2)
 
 DEPENDENCIES:
   - SHXMLParser
-  - WYPopoverController
 
 SPEC CHECKSUMS:
   SHXMLParser: 5879afe18ddf83cfa021d81963f8591765468ae3
-  WYPopoverController: c233d69fdfd5c7e316b481df1060624d7a9e629d
 
 COCOAPODS: 0.34.1
